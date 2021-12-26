@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Loader></Loader>
+      {/* <Loader></Loader> */}
       <ThreeCanvas></ThreeCanvas>
     </div>
   )
