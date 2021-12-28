@@ -20,6 +20,10 @@ export default function ThreeCanvas (props) {
     //     useFrame((state) => controls.current.update());
     //     return <orbitControls ref={controls} args={[camera, domElement]} />
     // }
+    const hideLoader = () => {
+        document.querySelector(".loader").classList.add("load-complete");
+    }
+
     return (
         <Canvas className="three-canvas" camera={{fov: 75, aspect: window.innerWidth/window.innerHeight, near: 0.1, far: 1000}}>
             <gridHelper size={200} divisions={50}></gridHelper>

@@ -1,13 +1,10 @@
-.App {
+.main-app {
     width: 100vw;
     height: 100vh;
-}
-
-.navbar {
+    z-index: 1;
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: white;
+    top: 0;
+    left: 0;
 }
 
 .page {

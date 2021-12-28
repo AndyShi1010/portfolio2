@@ -11,8 +11,9 @@ import Design from './pages/Design';
 function App() {
 
   return (
-    <div className="App">
-      {/* <Loader></Loader> */}
+    <>
+    <Loader></Loader>
+    <div className="main-app">
       <ThreeCanvas></ThreeCanvas>
       <BrowserRouter>
         <Routes>
@@ -24,6 +25,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </>
   )
 }
 
