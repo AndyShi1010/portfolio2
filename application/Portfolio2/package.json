@@ -14,6 +14,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"@types/simplebar": "^5.3.3",
 		"@types/three": "^0.149.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
@@ -23,7 +24,7 @@
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.54.0",
-		"svelte-ant-design-icons": "^0.3.4",
+		"svelte-carousel": "^1.0.25",
 		"svelte-check": "^3.0.1",
 		"tslib": "^2.4.1",
 		"typescript": "^4.9.3",
@@ -34,7 +35,8 @@
 		"install": "^0.13.0",
 		"npm": "^9.6.1",
 		"resize-observer-polyfill": "^1.5.1",
-		"simplebar": "^6.2.2",
+		"simplebar": "^6.2.5",
+		"svelte-remix": "^0.5.2",
 		"svrollbar": "^0.12.0",
 		"three": "^0.150.1"
 	}

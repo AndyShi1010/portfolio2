@@ -4,16 +4,27 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz@6..72&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Newsreader:opsz@6..72&display=swap" rel="stylesheet">
 		%sveltekit.head%
 	</head>
 	<style>
 		/* * {
 			outline: 1px solid rgba(255,255,0,0.2);
 		} */
+		:root {
+			--nav-height: 48px;
+			--page-padding: 72px;
+			--default-type: 'Ibarra Real Nova', serif;;
+		}
 		body {
 			color: white;
 			margin: 0;
-			background: #7e2ea3;
+			background: #2d1439;
+			font-family: var(--default-type);
+			overflow: hidden;
 		}
 		
 	</style>

@@ -11,11 +11,11 @@
 
 <style>
     #three-canvas {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 50vw;
-			height: 100vh;
-			z-index: -2;
-		}
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        z-index: -2;
+    }
 </style>

@@ -22,9 +22,10 @@ function animate(rend: THREE.WebGLRenderer, cam: THREE.PerspectiveCamera, scene:
 }
 
 export const createScene = (canv: Element) => {
-    let renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canv });
+    let renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canv, alpha: true  });
+    renderer.setClearColor( 0x000000, 0 );
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x7e2ea3);
+    scene.background = null
     scene.add(cube);
     const camera = new THREE.PerspectiveCamera(75, (window.innerWidth / 2) / window.innerHeight, 0.1, 1000);
     renderer.setSize(window.innerWidth / 2, window.innerHeight);

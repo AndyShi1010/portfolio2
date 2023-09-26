@@ -29,7 +29,7 @@
     //console.log(menu);
 </script>
 
-<AnimatedPage>
+<!-- <AnimatedPage> -->
 
 
 <h1>Design</h1>
@@ -42,8 +42,18 @@
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
 
 {#each menu as i}
     <GridItem path={"/design" + i.path} title={i.name} desc={'This is a test'} tags={tags} />
 {/each}
-</AnimatedPage>
+<!-- </AnimatedPage> -->

@@ -1,13 +1,20 @@
 <script lang='ts'>
+    
     import Nav from '$lib/Nav.svelte'
     import ThreeCanvas from '$lib/ThreeCanvas.svelte';
     //import { setContext, getContext, beforeUpdate } from 'svelte';
     // import { page } from '$app/stores';
     import { base } from '$app/paths'
     import { beforeNavigate, afterNavigate } from '$app/navigation';
-    import { prevRoute } from '/src/stores.ts'
     import { page } from '$app/stores';
     import { scale } from 'svelte/transition'
+    import { transitioning } from '../stores'
+
+    // let isTransitioning;
+
+    // transitioning.subscribe((val) => {
+    //     isTransitioning = transitioning;
+    // })
 
     console.log($page.status)
 
@@ -50,8 +57,9 @@
 </script>
 
 <div id="page" in:scale="{{start:1.5}}">
-<!-- <ThreeCanvas /> -->
+<!-- <p>{$transitioning}</p> -->
 {#if $page.status <= 400}
+<ThreeCanvas />
 <img src="/test.jpg" alt="Test">
 {/if}
 <slot></slot>
@@ -59,7 +67,6 @@
 </div>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Besley:wght@500&display=swap');
     img {
         position: absolute;
         top: 0;
@@ -68,5 +75,8 @@
         height: 100vh;
         object-fit: cover;
         z-index: -3;
+    }
+    :global(a > svg:focus, button > svg:focus) {
+        outline: none;
     }
 </style>

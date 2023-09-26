@@ -2,9 +2,9 @@
     import { fade } from 'svelte/transition'
 </script>
 
-<div in:fade="{{delay:1200, duration: 500}}">
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div in:fade="{{delay:0, duration: 500}}">
+<!-- <div> -->
+    <h1>Hello World!</h1>
 </div>
 
 <style>

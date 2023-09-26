@@ -4,6 +4,9 @@
     import { page } from '$app/stores';
     import { onMount, onDestroy } from 'svelte'
     import { beforeNavigate, afterNavigate } from '$app/navigation';
+    import 'simplebar'
+    // import ResizeObserver from 'resize-observer-polyfill';
+    // window.ResizeObserver = ResizeObserver;
     // import { Svroller, Svrollbar } from 'svrollbar'
     // import { onMount } from 'svelte';
     // import { prevRoute } from '/src/stores.ts'
@@ -38,6 +41,7 @@
     
     onMount(() => {
         checkSub();
+        window.ResizeObserver = ResizeObserver;
     });
 
     let animationState: number;
@@ -65,8 +69,10 @@
 
 </script>
 
+<svelte:window />
+
 {#if subToPar}
-<div class="animated content-container" bind:this={node} in:fly="{{x: 10, duration: 700, delay: 700}}" out:fly="{{x: 10, duration: 700}}">
+<div class="animated content-container" bind:this={node} in:fly="{{x: 10, duration: 200, delay: 200}}" out:fly="{{x: 10, duration: 200}}">
     <div data-simplebar>
         <a href="/">close</a>
         <h2>Y</h2>
@@ -74,7 +80,7 @@
     </div>
 </div>
 {:else}
-<div class="animated content-container" bind:this={node} in:fly="{{x: -10, duration: 700, delay: 700}}" out:fly="{{x: -10, duration: 700}}">
+<div class="animated content-container" bind:this={node} in:fly="{{x: -10, duration: 1000, delay: 1000}}" out:fly="{{x: -10, duration: 200}}">
     <div data-simplebar>
         <a href="/">close</a>
         <h2>X</h2>
@@ -101,16 +107,16 @@
         color: white;
     }
     .content-container {
-        /* -ms-overflow-style: none;
-        scrollbar-width: none; */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
 
-        /*--svrollbar-track-width: 20px;
+        --svrollbar-track-width: 20px;
         --svrollbar-track-background: #85b4b9;
         --svrollbar-track-opacity: 1;
 
         --svrollbar-thumb-width: 10px;
         --svrollbar-thumb-background: #d9ab55;
-        --svrollbar-thumb-opacity: 1;*/
+        --svrollbar-thumb-opacity: 1;
     }
     .content-container {
         /* position: absolute;
@@ -119,14 +125,15 @@
         /*-ms-overflow-style: none;
         scrollbar-width: none;*/
         /* overflow-x: hidden; */
-        overflow-y: scroll; 
+        overflow-y: scroll;
+        height: 100%; 
         /* margin: 0px 64px 64px 64px; */
         /* min-width: calc(100% - 64px); */
         /* width: calc(100% - 64px); */
         width: 100%;
-        min-width: calc(100% - 128px);
+        /* min-width: calc(100% - 128px); */
         display: block;
-        margin: 64px;
+        /* margin: 64px; */
         /* height: 100%; */
         /* border: 1px solid rgba(255,255,255,0.5); */
         mask-image: linear-gradient(to bottom, transparent 0, black 32px, black calc(100% - 16px), transparent 100%);
@@ -135,5 +142,12 @@
     }
     .content-container > div {
         width: 100%;
+        --svrollbar-track-width: 20px;
+        --svrollbar-track-background: #85b4b9;
+        --svrollbar-track-opacity: 1;
+
+        --svrollbar-thumb-width: 10px;
+        --svrollbar-thumb-background: #d9ab55;
+        --svrollbar-thumb-opacity: 1;
     }
 </style>
