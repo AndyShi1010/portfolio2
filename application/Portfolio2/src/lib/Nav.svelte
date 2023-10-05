@@ -100,12 +100,14 @@
 {/if}
 
 <style>
-    a, a:visited {
+    a, a:visited, button {
         color: white;
         text-decoration: none;
         display: flex;
         position: relative;
         box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
     }
     div#nav {
         display: flex;
@@ -155,14 +157,11 @@
     #home-button, #hamburger-button {
         width: 40px;
         height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
     }
 
     .nav-button {
-        padding: 8px 32px;
+        height: 40px;
+        width: 120px;
     }
     .nav-button:hover, .nav-button:focus, #home-button:hover, #home-button:focus, #hamburger-button:hover, #hamburger-button.menu-open {
         /* border: 2px solid white; */

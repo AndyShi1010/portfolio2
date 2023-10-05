@@ -7,8 +7,13 @@
     import { base } from '$app/paths'
     import { beforeNavigate, afterNavigate } from '$app/navigation';
     import { page } from '$app/stores';
-    import { scale } from 'svelte/transition'
+    import { scale, fade, blur } from 'svelte/transition'
+    import { onMount } from 'svelte';
     import { transitioning } from '../stores'
+    import Loader from '$lib/Loader.svelte';
+
+    let ready = false;
+    onMount(() => {setTimeout(() => {ready = true}, 2000)});
 
     // let isTransitioning;
 
@@ -56,15 +61,19 @@
     // }) 
 </script>
 
-<div id="page" in:scale="{{start:1.5}}">
-<!-- <p>{$transitioning}</p> -->
-{#if $page.status <= 400}
-<ThreeCanvas />
-<img src="/test.jpg" alt="Test">
-{/if}
-<slot></slot>
-<Nav/>
+{#if ready}
+<div id="page" in:scale="{{start:1.2, duration: 2000}}">
+    <!-- <p>{$transitioning}</p> -->
+    {#if $page.status <= 400}
+        <ThreeCanvas />
+        <img src="/test.jpg" alt="Test">
+    {/if}
+    <slot></slot>
+    <Nav/>
 </div>
+{:else}
+    <Loader></Loader>
+{/if}
 
 <style>
     img {
@@ -75,6 +84,10 @@
         height: 100vh;
         object-fit: cover;
         z-index: -3;
+    }
+    #page {
+        width: 100vw;
+        height: 100vh;
     }
     :global(a > svg:focus, button > svg:focus) {
         outline: none;
