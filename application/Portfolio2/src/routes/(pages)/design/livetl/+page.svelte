@@ -5,6 +5,7 @@
     import Slideshow from '$lib/Slideshow.svelte';
     import ThreeCanvas from '$lib/ThreeCanvas.svelte';
     // import Carousel from 'svelte-carousel';
+    import { Icon } from 'svelte-remix'
 
     export let data: PageData;
 
@@ -14,10 +15,18 @@
 
 <!-- <AnimatedPage> -->
 <div>
-    <a href="/design">back</a>
+    <div class="page-title">
+      
+    </div>
+
+    <a href="/design" class="back-button">
+      <Icon name="corner-up-left-fill" width="16" height="16" tabindex="-1"></Icon>
+      Back
+    </a>
+    <!-- <p id="nav-back">/design/</p> -->
     <h1>LiveTL</h1>
 
-    <p>
+    <!-- <p>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
       Minima quas ut illo labore incidunt dolorum odio temporibus 
       esse cumque fugiat ad, veritatis porro aliquam saepe debitis 
@@ -34,7 +43,7 @@
       Minima quas ut illo labore incidunt dolorum odio temporibus 
       esse cumque fugiat ad, veritatis porro aliquam saepe debitis 
       repellendus hic, cum voluptatum.
-    </p>
+    </p> -->
     <Slideshow>
       <img src="/burger.jpg" alt="Test1">
       <img src="/grapes.jpg" alt="Test2">
@@ -61,3 +70,16 @@
 </div>
 
 <!-- </AnimatedPage> -->
+
+<style>
+  .page-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 16px;
+  }
+  #nav-back {
+    color: rgba(255,255,255,0.75);
+  }
+</style>

@@ -16,6 +16,6 @@
         right: 0;
         width: 50vw;
         height: 100vh;
-        z-index: -2;
+        z-index: -3;
     }
 </style>

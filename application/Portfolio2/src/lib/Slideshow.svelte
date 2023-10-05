@@ -124,7 +124,10 @@
                 {#if loading}
                     <div id="text-loader" class="loader"></div>
                 {:else}
-                    Slide {currSlide + 1} of {totalSlides}
+                    {#key currSlide}
+                    <span id="curr-count" in:fade={{duration: 500}}>{currSlide + 1}</span> 
+                    <span> of {totalSlides}</span>
+                    {/key}
                 {/if}
             </div>
             <div class="nav-buttons">
@@ -219,6 +222,20 @@
 
     .indicator {
         padding-left: 8px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-style: italic;
+        font-size: 20px;
+    }
+
+    .indicator #curr-count {
+        /* font-size: 24px; */
+        vertical-align: middle;
+        text-shadow: 0px 0px 6px rgba(255,255,255,0.5);
+        font-style: normal;
+        font-weight: 700;
     }
 
     .nav-buttons {
@@ -235,15 +252,17 @@
         font-size: 36px;
         padding: 8px;
         box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.5);
+        cursor: pointer;
     }
 
     .nav-buttons button:not(:disabled) {
-        transition: background-color 0.25s, box-shadow 0.25s;
+        transition: background-color 0.25s, box-shadow 0.75s;
         color: white;
     }
 
     .nav-buttons button:not(:disabled):hover {
-        box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 12px 2px rgba(255,255,255,0.3)
+        box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 10px 4px rgba(255,255,255,0.3);
+        background-color: rgba(255,255,255,0.1);
     }
 
     .nav-buttons button:disabled {
@@ -255,11 +274,11 @@
     }
 
     .nav-buttons #next-button:not(:disabled):active :global(svg) {
-        transform: translateX(4px);
+        transform: translateX(4px) scaleY(0.8);
     }
 
     .nav-buttons #prev-button:not(:disabled):active :global(svg) {
-        transform: translateX(-4px);
+        transform: translateX(-4px) scaleY(0.8);;
     }
 
     @keyframes skeleton{

@@ -85,13 +85,6 @@
         /*                           */
         /* transform: scale(1.2); */
     }
-    .home-button {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
     .nav-button {
         padding: 8px 32px;
         margin: 0;
