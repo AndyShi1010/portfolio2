@@ -8,3 +8,5 @@ export const load = (async ({ url }) => {
         pathname
     }
 }) satisfies LayoutLoad;
+
+export const prerender = true;
