@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { base } from '$app/paths'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
@@ -31,7 +32,7 @@ export const createScene = (canv: Element) => {
     scene.background = null
     const loader = new GLTFLoader();
     // const gltf = useLoader(GLTFLoader, '../assets/models/test/untitled.gltf')
-    loader.load("/Avocado.gltf", (gltf) => {
+    loader.load(`${base}/Avocado.gltf`, (gltf) => {
         scene.add(gltf.scene);
     });
     const light = new THREE.PointLight( 0xffffff, 1, 0, 2 );

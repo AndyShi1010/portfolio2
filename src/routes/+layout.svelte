@@ -66,7 +66,7 @@
     <!-- <p>{$transitioning}</p> -->
     {#if $page.status <= 400}
         <ThreeCanvas />
-        <img src="/test.jpg" alt="Test">
+        <img src="{base}/test.jpg" alt="Test">
     {/if}
     <slot></slot>
     <Nav/>

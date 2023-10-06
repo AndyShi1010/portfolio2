@@ -6,6 +6,7 @@
     import ThreeCanvas from '$lib/ThreeCanvas.svelte';
     // import Carousel from 'svelte-carousel';
     import { Icon } from 'svelte-remix'
+    import { base } from '$app/paths'
 
     export let data: PageData;
 
@@ -19,7 +20,7 @@
       
     </div>
 
-    <a href="/design" class="back-button">
+    <a href="{base}/design" class="back-button">
       <Icon name="corner-up-left-fill" width="16" height="16" tabindex="-1"></Icon>
       Back
     </a>

@@ -3,6 +3,7 @@
     import { fly } from 'svelte/transition';
     import { transitioning } from '../stores';
     import { page } from '$app/stores';
+    import { base } from '$app/paths'
 
     let transition: Boolean;
 
@@ -46,10 +47,10 @@
                 </button>
                 {#if showNavMenu}
                 <div id="nav-menu" transition:fly={{y: 40, duration: 200}}>
-                    <a href="/about" class="menu-link">About</a>
-                    <a href="/code" class="menu-link">Code</a>
-                    <a href="/design" class="menu-link">Design</a>
-                    <a href="/" class="menu-link">Home</a>
+                    <a href="{base}/about" class="menu-link">About</a>
+                    <a href="{base}/code" class="menu-link">Code</a>
+                    <a href="{base}/design" class="menu-link">Design</a>
+                    <a href="{base}/" class="menu-link">Home</a>
                 </div>
                 {/if}
             </div>
@@ -73,13 +74,13 @@
     <div id="nav">
         <div id="nav-bar">
             <div id="nav-pages">
-                <a href="/" id="home-button"><Icon name="home-4-line" width="20" height="20" tabindex="-1"/></a>
+                <a href="{base}/" id="home-button"><Icon name="home-4-line" width="20" height="20" tabindex="-1"/></a>
                 <!-- <a id="home" href="/">
                     <HomeOutlined size="20"/>
                 </a> -->
-                <a href="/about" class="{$page.url.pathname.includes("/about")  ? "selected" : ""} {"nav-button"}" style={transition ? "pointer-events: none;" : ""}>About</a>
-                <a href="/code" class="{$page.url.pathname.includes("/code") ? "selected" : ""} {"nav-button"}" style={transition ? "pointer-events: none;" : ""}>Code</a>
-                <a href="/design" class="{$page.url.pathname.includes("/design") ? "selected" : ""} {"nav-button"}" style={transition ? "pointer-events: none;" : ""}>Design</a>
+                <a href="{base}/about" class="{$page.url.pathname.includes("/about")  ? "selected" : ""} {"nav-button"}" style={transition ? "pointer-events: none;" : ""}>About</a>
+                <a href="{base}/code" class="{$page.url.pathname.includes("/code") ? "selected" : ""} {"nav-button"}" style={transition ? "pointer-events: none;" : ""}>Code</a>
+                <a href="{base}/design" class="{$page.url.pathname.includes("/design") ? "selected" : ""} {"nav-button"}" style={transition ? "pointer-events: none;" : ""}>Design</a>
             </div>
             <div id="nav-socials">
                 <a href="https://github.com/AndyShi1010" class="social-link" target="_blank">

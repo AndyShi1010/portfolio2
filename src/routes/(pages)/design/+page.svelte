@@ -2,6 +2,7 @@
     import GridItem from "$lib/GridItem.svelte";
     import AnimatedPage from "$lib/AnimatedPage.svelte";
     import { pages } from "./data";
+    import { base } from '$app/paths'
 
     // class pageListing {
     //     let title: String;
@@ -38,7 +39,7 @@
 
 <GridList>
 {#each pages as i}
-    <GridItem path={"/design" + i.link} title={i.title} desc={i.desc} tags={i.tags} img={i.thumb}/>
+    <GridItem path={base + "/design" + i.link} title={i.title} desc={i.desc} tags={i.tags} img={i.thumb}/>
 {/each}
 </GridList>
 <!-- </AnimatedPage> -->
