@@ -1,5 +1,6 @@
 <script lang='ts'>
     import Link from "./Link.svelte";
+    import { base } from '$app/paths'
     export let img: {src: string, alt: string} = {src: "", alt: ""};
     export let title: string;
     export let desc: string;
@@ -9,9 +10,9 @@
 
 <div class="grid-item">
     {#if img}
-    <img src={img.src} alt={img.alt}>
+    <img src={base + img.src} alt={img.alt}>
     {/if}
-    <a class="title" href={path}>{title}</a>
+    <a class="title" href={base + path}>{title}</a>
     <hr>
     <div class="tags-container">
         {#each tags as t}

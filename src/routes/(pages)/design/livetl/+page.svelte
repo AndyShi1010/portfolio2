@@ -46,9 +46,9 @@
       repellendus hic, cum voluptatum.
     </p> -->
     <Slideshow>
-      <img src="/burger.jpg" alt="Test1">
-      <img src="/grapes.jpg" alt="Test2">
-      <img src="/movie.jpg" alt="Test2">
+      <img src="{base}/burger.jpg" alt="Test1">
+      <img src="{base}/grapes.jpg" alt="Test2">
+      <img src="{base}/movie.jpg" alt="Test2">
       <!-- <img src="/burger.jpg" alt="Test3">
       <img src="/grapes.jpg" alt="Test4"> -->
       <!-- <video src="/video2.mp4" controls></video> -->

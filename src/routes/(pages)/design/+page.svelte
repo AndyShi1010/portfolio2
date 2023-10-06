@@ -39,7 +39,7 @@
 
 <GridList>
 {#each pages as i}
-    <GridItem path={base + "/design" + i.link} title={i.title} desc={i.desc} tags={i.tags} img={i.thumb}/>
+    <GridItem path={"/design" + i.link} title={i.title} desc={i.desc} tags={i.tags} img={i.thumb}/>
 {/each}
 </GridList>
 <!-- </AnimatedPage> -->
