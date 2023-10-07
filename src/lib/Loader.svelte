@@ -22,7 +22,7 @@
 <div id="loader-container" out:fade={{duration: 1000, delay: 500}}>
     <div id="loader-bkg">
         <div id="loader-contents" in:blur={{amount: 10, duration: 500}} out:blur={{amount: 10, duration: 500}}>
-            <p>Work in progress{ellipsis}</p>
+            <p>Loading{ellipsis}</p>
             <div id="progress-bar">
 
             </div>
@@ -47,12 +47,12 @@
         justify-content: center;
     }
     #loader-contents #progress-bar{
-        width: 340px;
-        height: 10px;
+        width: 220px;
+        height: 4px;
         /* border: 1px solid rgba(255,255,255,0.5); */
         background-image: linear-gradient(to right, transparent 25%, white 50%, transparent 75%);
         background-size: 200% 200%;
-        animation: progress 0.5s infinite alternate-reverse linear;
+        animation: progress 0.5s infinite alternate-reverse ease-in-out;
         position: relative;
     }
 

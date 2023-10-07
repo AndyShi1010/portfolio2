@@ -5,6 +5,8 @@
     import { page } from '$app/stores';
     import { base } from '$app/paths'
 
+    import { quadOut, expoOut, elasticOut } from 'svelte/easing'
+
     let transition: Boolean;
 
 	transitioning.subscribe((value) => {
@@ -15,17 +17,37 @@
 
     let showNavMenu = false;
 
+    let showSocialMenu = false;
+
     $: mobile = innerWidth < 1080
+
+    $: mobile2 = innerWidth < 640
 
     $: {if (mobile == false) {showNavMenu = false}}
 
-    function toggleMenu() {
+    $: {if (mobile == false || mobile2 == false) {showSocialMenu = false}}
+
+    function toggleNavMenu() {
         console.log("toggle menu");
+        showSocialMenu = false;
+        document.body.removeEventListener('click', toggleSocialMenu);
         showNavMenu = !showNavMenu;
         if (showNavMenu == true) {
-            document.body.addEventListener('click', toggleMenu);
+            document.body.addEventListener('click', toggleNavMenu);
         } else {
-            document.body.removeEventListener('click', toggleMenu);
+            document.body.removeEventListener('click', toggleNavMenu);
+        }
+    }
+
+    function toggleSocialMenu() {
+        console.log("toggle menu");
+        showNavMenu = false;
+        document.body.removeEventListener('click', toggleNavMenu);
+        showSocialMenu = !showSocialMenu;
+        if (showSocialMenu == true) {
+            document.body.addEventListener('click', toggleSocialMenu);
+        } else {
+            document.body.removeEventListener('click', toggleSocialMenu);
         }
     }
 
@@ -38,23 +60,53 @@
 
 <svelte:window bind:innerWidth  />
 
+{#if showNavMenu || showSocialMenu}
+    <div class="menu-background-blur" transition:fly={{y: 40, duration: 700, easing: quadOut}}></div>
+    <div class="menu-background" transition:fly={{y: 40, duration: 700, easing: quadOut}}></div>
+{/if}
+
 {#if mobile}
     <div id="nav">
         <div id="nav-bar">
             <div id="nav-pages">
-                <button id="hamburger-button" on:click|stopPropagation={toggleMenu} class={showNavMenu ? "menu-open" : ""}>
+                <button id="hamburger-button" on:click|stopPropagation={toggleNavMenu} class={showNavMenu ? "menu-open" : ""}>
                     <Icon name="menu-5-line" width="20" height="20" tabindex="-1"/>
                 </button>
                 {#if showNavMenu}
-                <div id="nav-menu" transition:fly={{y: 40, duration: 200}}>
-                    <a href="{base}/about" class="menu-link">About</a>
-                    <a href="{base}/code" class="menu-link">Code</a>
-                    <a href="{base}/design" class="menu-link">Design</a>
-                    <a href="{base}/" class="menu-link">Home</a>
+                <div id="nav-menu">
+                    <a href="{base}/about" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}>About</a>
+                    <a href="{base}/code" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}>Code</a>
+                    <a href="{base}/design" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}>Design</a>
+                    <a href="{base}/" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} out:fly={{y: 40, duration: 1000, easing: expoOut}}>Home</a>
                 </div>
                 {/if}
             </div>
             <div id="nav-socials">
+            {#if mobile2}
+                <button id="hamburger-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
+                    <Icon name="link" width="20" height="20" tabindex="-1"/>
+                </button>
+                {#if showSocialMenu}
+                <div id="social-menu">
+                    <a href="https://github.com/AndyShi1010" target="_blank" in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}>
+                        <Icon name="github-line" tabindex="-1"/>
+                        Github
+                    </a>
+                    <a href="" target="_blank" in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}>
+                        <Icon name="linkedin-box-line" tabindex="-1"/>
+                        LinkedIn
+                    </a>
+                    <a href="https://twitter.com/and0shi" target="_blank" in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}>
+                        <Icon name="twitter-x-line" tabindex="-1"/>
+                        X
+                    </a>
+                    <a href="https://www.instagram.com/and0shi/" target="_blank" in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} out:fly={{y: 40, duration: 1000, easing: expoOut}}>
+                        <Icon name="instagram-line" tabindex="-1"/>
+                        Instagram
+                    </a>
+                </div>
+                {/if}
+            {:else}
                 <a href="https://github.com/AndyShi1010" class="social-link" target="_blank">
                     <Icon name="github-line" tabindex="-1"/>
                 </a>
@@ -67,7 +119,8 @@
                 <a href="https://www.instagram.com/and0shi/" class="social-link" target="_blank">
                     <Icon name="instagram-line" tabindex="-1"/>
                 </a>
-            </div>
+            {/if}
+        </div>
         </div>
     </div>
 {:else}
@@ -245,26 +298,56 @@
         background-color: rgba(255,255,255,0.1);
     }
 
-    #hamburger-button + #nav-menu {
-        background-color: rgba(255,255,255,0.2);
+
+
+    #nav-menu, #social-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* background-color: rgba(255,255,255,0.2); */
         position: absolute;
         bottom: 100%;
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(255,255,255,0.2);
-        box-shadow: 0px 0px 20px 8px rgba(255,255,255,0.3);
+        left: 0;
+        z-index: 20;
+        /* backdrop-filter: blur(20px);
+        border: 2px solid rgba(255,255,255,0.2); */
+        /* box-shadow: 0px 0px 20px 8px rgba(255,255,255,0.3); */
     }
 
-    #nav-menu a {
+    #nav-menu a, #social-menu a {
         padding: 16px;
-        width: 240px;
+        width: 100%;
         line-height: 1.2;
         font-weight: 400;
         font-size: 20px;
         transition: background-color 0.2s;
     }
 
-    #nav-menu a:hover {
-        background-color: rgba(255,255,255,0.25);
+    #nav-menu a:hover, #social-menu a:hover {
+        text-decoration: underline;
+    }
+
+    .menu-background-blur {
+        width: 100%;
+        height: 50vh;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(20px);
+        mask-image: linear-gradient(to top, black 0, black 70%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to top, black 0, black 70%, transparent 100%);
+        mask-image: -webkit-linear-gradient(to top, black 0, black 70%, transparent 100%);
+        -webkit-mask-image: -webkit-linear-gradient(to top, black 0, black 70%, transparent 100%);
+    }
+
+    .menu-background {
+        width: 100%;
+        height: 50vh;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
     }
 
     @keyframes breathe {

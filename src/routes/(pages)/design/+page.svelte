@@ -1,6 +1,7 @@
 <script lang="ts">
     import GridItem from "$lib/GridItem.svelte";
     import AnimatedPage from "$lib/AnimatedPage.svelte";
+    import Break from "$lib/Break.svelte";
     import { pages } from "./data";
     import { base } from '$app/paths'
 
@@ -34,7 +35,7 @@
 
 
 <h1>Design</h1>
-
+<Break />
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
 
 <GridList>
