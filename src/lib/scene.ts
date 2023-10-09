@@ -32,11 +32,10 @@ export const createScene = (canv: Element) => {
     scene.background = null
     const loader = new GLTFLoader();
     // const gltf = useLoader(GLTFLoader, '../assets/models/test/untitled.gltf')
-    loader.load(`${base}/Avocado.gltf`, (gltf) => {
+    loader.load(`${base}/Tree.gltf`, (gltf) => {
         scene.add(gltf.scene);
     });
-    const light = new THREE.PointLight( 0xffffff, 1, 0, 2 );
-    light.position.set( -20, -20, 20 );
+    const light = new THREE.AmbientLight( 0xffffff );
     scene.add( light );
     const light2 = new THREE.PointLight( 0xffffff, 1, 0, 2 );
     light2.position.set( -20, -20, -20 );

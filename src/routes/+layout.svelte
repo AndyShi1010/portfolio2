@@ -62,7 +62,8 @@
 </script>
 
 {#if ready}
-<div id="page" in:scale="{{start:1.2, duration: 2000}}">
+<div id="page">
+    <h3>Work in progress</h3>
     <!-- <p>{$transitioning}</p> -->
     {#if $page.status <= 400}
         <ThreeCanvas />
@@ -86,8 +87,8 @@
         z-index: -3;
     }
     #page {
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
     }
     :global(a > svg:focus, button > svg:focus) {
         outline: none;

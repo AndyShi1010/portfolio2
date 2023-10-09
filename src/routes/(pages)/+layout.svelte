@@ -68,6 +68,29 @@
 <div class="page-container">
     <!-- <h1>{$prevRoute}</h1> -->
     <!-- {data.pathname} -->
+    {#if mobile}
+    <div class="page-contents" id="contents" in:fly="{{y: 10, duration: 600, delay: 610, easing: quadOut}}" out:fly="{{y: 10, duration: 200}}" on:transitionend={() => {}}>
+        <!-- <div class="page-contents" id="contents" in:fly="{{x: -10, duration: 600, delay: 610}}" out:fly="{{x: -10, duration: 600}}" data-simplebar> -->
+            <Svroller 
+                width="100%" 
+                height="100%" 
+                alwaysVisible={true}
+                initiallyVisible={true}
+                >   
+                <!-- <Svroller 
+                width="100%" 
+                height="100%" 
+                hideAfter={500}
+                initiallyVisible={true}
+                alwaysVisible={true}
+                >    -->
+                <div class="content-slot">
+                    <slot>
+                    </slot>
+                </div>
+            </Svroller>
+        </div>
+    {:else}
     <div class="page-contents" id="contents" in:fly="{{x: -10, duration: 600, delay: 610, easing: quadOut}}" out:fly="{{x: -10, duration: 200}}" on:transitionend={() => {}}>
     <!-- <div class="page-contents" id="contents" in:fly="{{x: -10, duration: 600, delay: 610}}" out:fly="{{x: -10, duration: 600}}" data-simplebar> -->
         <Svroller 
@@ -89,6 +112,7 @@
             </div>
         </Svroller>
     </div>
+    {/if}
     <!-- <div class="page-contents" transition:fly|local="{{x: -10, duration: 1200}}">
         <slot>
         </slot> -->

@@ -74,17 +74,29 @@
                 </button>
                 {#if showNavMenu}
                 <div id="nav-menu">
-                    <a href="{base}/about" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}>About</a>
-                    <a href="{base}/code" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}>Code</a>
-                    <a href="{base}/design" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}>Design</a>
-                    <a href="{base}/" class="menu-link" in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} out:fly={{y: 40, duration: 1000, easing: expoOut}}>Home</a>
+                    <a href="{base}/about" class="menu-link" 
+                        in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}
+                    >About</a>
+                    <a href="{base}/code" class="menu-link" 
+                        in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}
+                    >Code</a>
+                    <a href="{base}/design" class="menu-link" 
+                        in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}
+                    >Design</a>
+                    <a href="{base}/" class="menu-link" 
+                        in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, easing: expoOut}}
+                    >Home</a>
                 </div>
                 {/if}
             </div>
             <div id="nav-socials">
             {#if mobile2}
                 <button id="hamburger-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
-                    <Icon name="link" width="20" height="20" tabindex="-1"/>
+                    <Icon name="user-heart-line" width="20" height="20" tabindex="-1"/>
                 </button>
                 {#if showSocialMenu}
                 <div id="social-menu">

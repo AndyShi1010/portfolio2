@@ -3,6 +3,9 @@
     import { fade, fly } from 'svelte/transition'
     import AnimatedPage from "$lib/AnimatedPage.svelte";
     import Slideshow from '$lib/Slideshow.svelte';
+    import Break from '$lib/Break.svelte';
+    import Chip from '$lib/Chip.svelte';
+    import Button from '$lib/Button.svelte';
     import ThreeCanvas from '$lib/ThreeCanvas.svelte';
     // import Carousel from 'svelte-carousel';
     import { Icon } from 'svelte-remix'
@@ -25,7 +28,17 @@
       Back
     </a>
     <!-- <p id="nav-back">/design/</p> -->
-    <h1>LiveTL</h1>
+    <div class="heading-section">
+      <h1>LiveTL</h1>
+      <div class="heading-links">
+        <Button to="https://livetl.app/en/home/" icon="iconLeft" target="_blank"><Icon name="global-line" width="16" height="16" tabindex="-1"></Icon>Website</Button>
+        <Button to="https://livetl.app/en/home/" icon="iconLeft" target="_blank"><Icon name="github-line" width="16" height="16" tabindex="-1"></Icon>Github</Button>
+        <Button to="https://livetl.app/en/home/" icon="iconLeft" target="_blank"><Icon name="pencil-ruler-line" width="16" height="16" tabindex="-1"></Icon>Figma</Button>
+      </div>
+    </div>
+    <p><em>Live stream and chat translation for YouTube and Twitch.</em></p>
+    <Chip text="UI/UX"/> <Chip text="2022"/>
+    <Break/>
 
     <!-- <p>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
@@ -79,6 +92,19 @@
     align-items: center;
     /* justify-content: space-between; */
     gap: 16px;
+  }
+  .heading-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .heading-links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 8px;
   }
   #nav-back {
     color: rgba(255,255,255,0.75);
