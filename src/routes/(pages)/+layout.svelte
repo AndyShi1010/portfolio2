@@ -153,7 +153,7 @@
         box-sizing: border-box;
         /* width: 100%;  */
         width: 100%;
-        height: calc(100vh - var(--nav-height) - var(--page-padding));
+        height: calc(100svh - var(--nav-height) - var(--page-padding));
         /* width: 50%;
         height: calc(100vh - 96px); */
         /* padding: 64px; */
@@ -293,7 +293,7 @@
         .page-container {
             padding: var(--page-padding) 0px var(--page-padding) calc(var(--page-padding) * 1.5);
             width: 50%;
-            height: calc(100vh - var(--nav-height) - var(--page-padding));
+            height: calc(100svh - var(--nav-height) - var(--page-padding));
         }
         .page-contents {
             border-right: 1px solid rgba(255,255,255,0.25);

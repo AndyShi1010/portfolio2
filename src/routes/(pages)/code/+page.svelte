@@ -1,5 +1,5 @@
 <script>
-    import GridItem from "$lib/GridItem.svelte";
+    import GridList from "$lib/GridList.svelte";
     import { pages } from "./data";
     import { base } from '$app/paths'
 </script>
@@ -7,7 +7,6 @@
 <!-- <AnimatedPage> -->
     <h1>Code</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem soluta, exercitationem, excepturi nemo eveniet numquam repudiandae, quo quas eos incidunt voluptas tempore. Unde reiciendis omnis non, autem repudiandae minima nesciunt?</p>
-    {#each pages as i}
-        <GridItem path={base + "/code" + i.link} title={i.title} desc={i.desc} tags={i.tags} img={i.thumb}/>
-    {/each}
+    <GridList items={pages} root="/code">
+    </GridList>
 <!-- </AnimatedPage> -->

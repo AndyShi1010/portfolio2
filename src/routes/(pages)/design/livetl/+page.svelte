@@ -56,10 +56,7 @@
     </Slideshow>
     
     <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-      Minima quas ut illo labore incidunt dolorum odio temporibus 
-      esse cumque fugiat ad, veritatis porro aliquam saepe debitis 
-      repellendus hic, cum voluptatum.
+      Created UI mockups and prototypes to improve the user experience of a Chrome extension with over 30,000 downloads.
     </p>
 
     <!-- <Carousel

@@ -227,7 +227,7 @@
         align-items: center;
         gap: 4px;
         font-style: italic;
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .indicator #curr-count {
