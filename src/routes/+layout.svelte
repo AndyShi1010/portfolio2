@@ -63,7 +63,6 @@
 
 {#if ready}
 <div id="page">
-    <h3>Work in progress</h3>
     <!-- <p>{$transitioning}</p> -->
     {#if $page.status <= 400}
         <ThreeCanvas />

@@ -1,21 +1,17 @@
 <script lang="ts">
-    export let isList: boolean = false;
+    export let items;
 </script>
 
-{#if isList}
-    <div class="list-items">
-        <slot></slot>
-    </div>
-{:else}
-    <div class="grid-items">
-        <slot></slot>
-    </div>
-{/if}
+
+<div class="grid-items">
+    <slot></slot>
+</div>
+
 
 <style>
     .grid-items {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 32px;
+        display: flex; 
+        flex-direction: column;
+        gap: 16px;
     }
 </style>

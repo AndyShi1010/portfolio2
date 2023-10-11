@@ -161,16 +161,16 @@
         z-index: 1;
     }
     :global(.slides > *.animate-in-left) {
-        animation: slide-from-left 0.2s;
+        animation: slide-from-left 0.2s ease-out;
     }
     :global(.slides > *.animate-in-right) {
         animation: slide-from-right 0.2s;
     }
     :global(.slides > *.animate-out-left) {
-        animation: slide-from-left 0.2s reverse;
+        animation: slide-from-left 0.2s ease-out reverse;
     }
     :global(.slides > *.animate-out-right) {
-        animation: slide-from-right 0.2s reverse;
+        animation: slide-from-right 0.2s ease-out reverse;
     }
     :global(.slides > *.current) {
         /* position: relative; */

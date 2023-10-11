@@ -6,6 +6,7 @@
 
 <div>
 <!-- <div> -->
+    <h3>Work in progress</h3>
     <span id="hello" in:blur={{amount: 10, duration: 1000, delay: 800}} out:blur={{amount: 10, duration: 500}}>Hello! I am</span>
     <span id="name1" in:blur={{amount: 10, duration: 1000, delay: 1000}} out:blur={{amount: 10, duration: 500}}>Andy Shi</span>
     <span id="tagline"></span>

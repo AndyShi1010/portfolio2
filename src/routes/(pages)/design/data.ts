@@ -1,8 +1,8 @@
 export const pages: PageData[] = [
     {
         title: "LiveTL",
-        desc: "Some Description",
-        tags: ["Apple", "Orange", "Banana", "Grape"],
+        desc: "Livestream chat translation for YouTube and Twitch",
+        tags: ["UI/UX", "2022"],
         link: "/livetl",
     },
     {

@@ -20,8 +20,8 @@
         user-select: none;
         pointer-events: none;
         opacity: 0.75;
-        margin-block-start: 16px;
-        margin-block-end: 16px;
+        margin-block-start: 24px;
+        margin-block-end: 24px;
     }
     #line {
         width: calc(100% - 8px);

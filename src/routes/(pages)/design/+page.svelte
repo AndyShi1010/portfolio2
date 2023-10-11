@@ -38,7 +38,7 @@
 <Break />
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
 
-<GridList>
+<GridList items={pages}>
 {#each pages as i}
     <GridItem path={"/design" + i.link} title={i.title} desc={i.desc} tags={i.tags} img={i.thumb}/>
 {/each}

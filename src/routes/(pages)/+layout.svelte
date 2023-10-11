@@ -273,6 +273,7 @@
         height: auto;
         box-sizing: border-box;
         text-decoration: none;
+        margin-block-end: 32px;
     }
 
     :global(.back-button):hover {
