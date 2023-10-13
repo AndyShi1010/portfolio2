@@ -19,6 +19,8 @@
 
     let showSocialMenu = false;
 
+    let menuClick = false;
+
     $: mobile = innerWidth < 1080
 
     $: mobile2 = innerWidth < 640
@@ -72,8 +74,8 @@
                 <button id="hamburger-button" on:click|stopPropagation={toggleNavMenu} class={showNavMenu ? "menu-open" : ""}>
                     <Icon name="menu-5-line" width="20" height="20" tabindex="-1"/>
                 </button>
+                <div id="nav-menu" class:disabled={showNavMenu == false}>
                 {#if showNavMenu}
-                <div id="nav-menu">
                     <a href="{base}/about" class="menu-link" 
                         in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} 
                         out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}
@@ -90,34 +92,46 @@
                         in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} 
                         out:fly={{y: 40, duration: 1000, easing: expoOut}}
                     >Home</a>
-                </div>
                 {/if}
+                </div>
             </div>
             <div id="nav-socials">
             {#if mobile2}
                 <button id="hamburger-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
                     <Icon name="user-heart-line" width="20" height="20" tabindex="-1"/>
                 </button>
+                <div id="social-menu" class:disabled={showSocialMenu == false}>
                 {#if showSocialMenu}
-                <div id="social-menu">
-                    <a href="https://github.com/AndyShi1010" target="_blank" in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}>
+                    <a href="https://github.com/AndyShi1010" target="_blank" 
+                        in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}
+                    >
                         <Icon name="github-line" tabindex="-1"/>
                         Github
                     </a>
-                    <a href="" target="_blank" in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}>
+                    <a href="" target="_blank" 
+                        in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}
+                    >
                         <Icon name="linkedin-box-line" tabindex="-1"/>
                         LinkedIn
                     </a>
-                    <a href="https://twitter.com/and0shi" target="_blank" in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}>
+                    <a href="https://twitter.com/and0shi" target="_blank" 
+                        in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}
+                    >
                         <Icon name="twitter-x-line" tabindex="-1"/>
                         X
                     </a>
-                    <a href="https://www.instagram.com/and0shi/" target="_blank" in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} out:fly={{y: 40, duration: 1000, easing: expoOut}}>
+                    <a href="https://www.instagram.com/and0shi/" target="_blank"
+                        in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} 
+                        out:fly={{y: 40, duration: 1000, easing: expoOut}}
+                    >
                         <Icon name="instagram-line" tabindex="-1"/>
                         Instagram
                     </a>
-                </div>
                 {/if}
+                </div>
             {:else}
                 <a href="https://github.com/AndyShi1010" class="social-link" target="_blank">
                     <Icon name="github-line" tabindex="-1"/>
@@ -174,6 +188,10 @@
         box-sizing: border-box;
         justify-content: center;
         align-items: center;
+    }
+    .disabled {
+        pointer-events: none;
+        cursor: default;
     }
     div#nav {
         display: flex;

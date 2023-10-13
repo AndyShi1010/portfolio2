@@ -12,7 +12,7 @@
 <style>
     a {
         font-family: var(--default-type);
-        font-size: 16px;
+        font-size: 14px;
         text-decoration: none;
         position: relative;
         display: flex;
@@ -27,5 +27,10 @@
     a:hover {
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 10px 4px rgba(255,255,255,0.3);
         background-color: rgba(255,255,255,0.1);
+    }
+    @media only screen and (min-width: 1080px) { 
+        a {
+            font-size: 16px;
+        }
     }
 </style>

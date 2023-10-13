@@ -13,7 +13,7 @@
     import Loader from '$lib/Loader.svelte';
 
     let ready = false;
-    onMount(() => {setTimeout(() => {ready = true}, 2000)});
+    onMount(() => {setTimeout(() => {ready = true}, 1500)});
 
     // let isTransitioning;
 

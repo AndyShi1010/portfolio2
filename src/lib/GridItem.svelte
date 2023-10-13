@@ -89,6 +89,9 @@
         h2 {
             font-size: 32px;
         }
+        p {
+            font-size: 16px;
+        }
         .grid-item { 
             padding: 16px;
         }
