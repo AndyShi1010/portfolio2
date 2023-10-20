@@ -16,5 +16,6 @@
         font-family: var(--default-type);
         display: inline;
         margin: 0;
+        white-space: nowrap;
     }
 </style>

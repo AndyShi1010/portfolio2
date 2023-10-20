@@ -1,15 +1,57 @@
-export const pages: PageData[] = [
+export const pages: PageMetadata[] = [
     {
-        title: "Monopoly",
-        desc: "Some Description",
-        tags: ["Apple", "Orange", "Banana", "Grape"],
+        title: "Piqued",
+        desc: "Social blogging platform",
+        tags: ["Web Development", "JS", "Svelte", "UI/UX", "2023"],
         link: "/",
     },
     {
-        title: "ATeM",
-        desc: "Some Description 2",
-        tags: ["Apple", "Orange"],
+        title: "Monopoly",
+        desc: "Online multiplayer Monopoly game",
+        tags: ["Web Development", "JS", "React", "UI/UX", "2023"],
         link: "/",
         thumb: {src: "/burger.jpg", alt: "Burger"},
-    }
+    },
+    {
+        title: "SNFC Registration",
+        desc: "Student registration system for the Sierra Nevada Field Campus of SFSU",
+        tags: ["Web Development"],
+        link: "/",
+        thumb: {src: "/burger.jpg", alt: "Burger"},
+    },
+    {
+        title: "Broken Record",
+        desc: "Musical Instrument App",
+        tags: ["Web Development", "TS", "React"],
+        link: "/",
+        thumb: {src: "/burger.jpg", alt: "Burger"},
+    },
+    {
+        title: "Cosmauraders",
+        desc: "Procedurally generated, space-themed rougelike game",
+        tags: ["Unity", "C#"],
+        link: "/",
+        thumb: {src: "/burger.jpg", alt: "Burger"},
+    },
+    {
+        title: "ATeM",
+        desc: "Online payment and cash transfer app.",
+        tags: ["Web Development", "JS", "UI/UX"],
+        link: "/",
+        thumb: {src: "/burger.jpg", alt: "Burger"},
+    },
+    {
+        title: "Submarine/Subylert",
+        desc: "Subscription tracking app",
+        tags: ["Android", "Java", "UI/UX"],
+        link: "/",
+        thumb: {src: "/burger.jpg", alt: "Burger"},
+    },
+    {
+        title: "Imagetree",
+        desc: "Image hosting and sharing platform",
+        tags: ["Web Development", "JS", "UI/UX"],
+        link: "/",
+        thumb: {src: "/burger.jpg", alt: "Burger"},
+    },
 ]

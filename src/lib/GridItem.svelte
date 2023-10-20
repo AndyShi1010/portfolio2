@@ -36,7 +36,7 @@
     .grid-item {
         display: grid;
         /* flex-wrap: wrap; */
-        grid-template-columns: minmax(140px, 40%) auto;
+        grid-template-columns: minmax(140px, 30%) auto;
         column-gap: 16px;
         padding: 12px;
         transition: box-shadow 0.75s;

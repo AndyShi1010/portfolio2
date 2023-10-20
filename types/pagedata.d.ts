@@ -1,4 +1,4 @@
-type PageData = {
+type PageMetadata = {
     title: string;
     desc: string;
     tags: string[]; 

@@ -19,8 +19,6 @@
 
     let showSocialMenu = false;
 
-    let menuClick = false;
-
     $: mobile = innerWidth < 1080
 
     $: mobile2 = innerWidth < 640
