@@ -1,6 +1,6 @@
 <script lang="ts">
     import GridItem from "./GridItem.svelte";
-    export let items: PageData[];
+    export let items: PageMetadata[];
     export let root: string
 </script>
 
