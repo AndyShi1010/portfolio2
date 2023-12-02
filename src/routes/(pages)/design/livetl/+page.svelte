@@ -13,23 +13,13 @@
 
     let desc = pages.find((e) => e.title == title)!.desc;
     let tags = pages.find((e) => e.title == title)!.tags;
-    
-
-    let carousel;
-
 </script>
 
-<!-- <AnimatedPage> -->
-<div>
-    <div class="page-title">
-      
-    </div>
-
+<div class="generic-project-page">
     <a href="{base}/design" class="back-button">
       <Icon name="corner-up-left-fill" width="16" height="16" tabindex="-1"></Icon>
       Back
     </a>
-    <!-- <p id="nav-back">/design/</p> -->
     <div class="heading-section">
       <h1>LiveTL</h1>
       <div class="heading-links">
@@ -58,54 +48,5 @@
     <p>
       Created UI mockups and prototypes to improve the user experience of a Chrome extension with over 30,000 downloads.
     </p>
-
-    <!-- <Carousel
-    bind:this={carousel}
-  >
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-  </Carousel> -->
 </div>
 
-<!-- </AnimatedPage> -->
-
-<style>
-  .page-title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* justify-content: space-between; */
-    gap: 16px;
-  }
-  .heading-section {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    margin-block-end: 16px;
-  }
-  .heading-links {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 8px;
-  }
-  #nav-back {
-    color: rgba(255,255,255,0.75);
-  }
-  .chip-container {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    margin-block-start: 16px;
-    margin-block-end: 16px;
-  }
-  .subtitle {
-    margin: 0;
-    margin-block-end: 16px;
-    font-style: italic;
-  }
-</style>

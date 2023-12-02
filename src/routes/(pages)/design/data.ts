@@ -3,13 +3,13 @@ export const pages: PageMetadata[] = [
         title: "AnimeFX - Various Works",
         desc: "Various design work for the AnimeFX club.",
         tags: ["Graphic Design", "2023"],
-        link: "/",
+        link: "/animefx",
     },
     {
         title: "CoSE - Various Works",
         desc: "Various design work for the College of Science & Engineering at SFSU.",
         tags: ["Graphic Design", "2023"],
-        link: "/",
+        link: "/cose",
     },
     {
         title: "Gorilla",
@@ -27,7 +27,7 @@ export const pages: PageMetadata[] = [
         title: "Design Now! - Paul Rand",
         desc: "Fictitious magazine issue on the graphic design Paul Rand",
         tags: ["Graphic Design", "2023"],
-        link: "/",
+        link: "/design-now-paul-rand",
     },
     {
         title: "LiveTL",

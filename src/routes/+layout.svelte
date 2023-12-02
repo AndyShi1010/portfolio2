@@ -92,4 +92,39 @@
     :global(a > svg:focus, button > svg:focus) {
         outline: none;
     }
+    :global(.generic-project-page .heading-section) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-block-end: 16px;
+    }
+    :global(.generic-project-page .heading-links) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 8px;
+    }
+    :global(.generic-project-page .chip-container) {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-block-start: 16px;
+        margin-block-end: 16px;
+    }
+    :global(.generic-project-page .subtitle) {
+        margin: 0;
+        margin-block-end: 16px;
+        font-style: italic;
+    }
+    :global(.generic-project-page #nav-back) {
+        color: rgba(255,255,255,0.75);
+    }
+    :global(.generic-project-page h2) {
+        font-weight: normal;
+        margin-block-start: 16px;
+        margin-block-end: 16px;
+    }
 </style>

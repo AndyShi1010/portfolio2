@@ -7,6 +7,7 @@
     let currSlide = 0;
     let updateSlide;
     let contents: HTMLDivElement;
+    export let ratio = "16 / 9";
 
     let totalSlides = 0;
     $: totalSlides = contents?.children.length;
@@ -115,7 +116,7 @@
     
     <div class="slides-main">
 
-        <div class="slides" bind:this={contents}>
+        <div class="slides" bind:this={contents} style:aspect-ratio={ratio}>
             <slot />
         </div>
 
@@ -149,7 +150,7 @@
     :global(.slides > *) {
         width: 100%;
         height: 100%;
-        aspect-ratio: 16 / 9;
+        /* aspect-ratio: 16 / 9; */
         object-fit: contain;
         /* position: absolute;
         top: 0;
