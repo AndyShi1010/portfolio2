@@ -42,8 +42,16 @@
         <img src="{base}/CoSE/pi.png" alt="Pi">
     </Slideshow>
 	<h2>Event Print Flyers</h2>
-	<CollageGrid>
-		<img src="{base}/CoSE/pastries.png" alt="Pastries">
-        <img src="{base}/CoSE/print.png" alt="Print">
-    </CollageGrid>
+	<CollageGrid
+		images={[
+			{
+				path: "/CoSE/pastries.png",
+				alt: "Pastries"
+			},
+			{
+				path: "/CoSE/print.png",
+				alt: "Print"
+			}
+		]}
+    />
 </div>

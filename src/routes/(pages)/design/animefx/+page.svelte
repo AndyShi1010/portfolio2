@@ -59,10 +59,24 @@
 		]}
     />
     <h2>Print Flyer Screening Annoucements</h2>
-	<!-- <CollageGrid>
-        <img src="{base}/AnimeFX/ASilentVoice5.png" alt="LiveTL UI">
-        <img src="{base}/AnimeFX/GotF.png" alt="Layout Editor">
-        <img src="{base}/AnimeFX/WolfChildren.png" alt="Settings">
-        <img src="{base}/AnimeFX/Maquia.png" alt="Settings">
-    </CollageGrid> -->
+	<CollageGrid
+		images={[
+			{
+				path: "/AnimeFX/ASilentVoice5.png",
+				alt: "A Silent Voice"
+			},
+			{
+				path: "/AnimeFX/GotF.png",
+				alt: "Grave of the Fireflies"
+			},
+			{
+				path: "/AnimeFX/WolfChildren.png",
+				alt: "Wolf Children"
+			},
+			{
+				path: "/AnimeFX/Maquia.png",
+				alt: "Maquia"
+			}
+		]}
+    />
 </div>

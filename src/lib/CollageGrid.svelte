@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import { crossfade } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
-	const [send, receive] = crossfade({ duration: 250, easing: cubicOut });
+	const [send, receive] = crossfade({ duration: 300, easing: cubicOut });
 
 	export let images: { path: string; alt: string }[];
 
@@ -74,7 +74,7 @@
 <style>
 	dialog::backdrop {
 		background-color: rgba(0,0,0,0.5);
-		animation: backdrop-fade 0.3s normal 1;
+		animation: backdrop-fade 0.25s normal 1;
         /* backdrop-filter: blur(20px); */
 	}
 
@@ -127,7 +127,10 @@
 		align-items: center;
 	}
 	dialog img {
-		height: 100%;
+		height: auto;
+		width: auto;
+		max-height: 100%;
+		max-width: 100%;
 		user-select: none;
 	}
     @keyframes backdrop-fade {

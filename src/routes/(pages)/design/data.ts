@@ -4,24 +4,26 @@ export const pages: PageMetadata[] = [
         desc: "Various design work for the AnimeFX club.",
         tags: ["Graphic Design", "2023"],
         link: "/animefx",
+        thumb: {src: "/AnimeFX/thumb.png", alt: "AnimeFX"},
     },
     {
         title: "CoSE - Various Works",
         desc: "Various design work for the College of Science & Engineering at SFSU.",
         tags: ["Graphic Design", "2023"],
         link: "/cose",
+        thumb: {src: "/CoSE/thumb.png", alt: "CoSE"},
     },
     {
         title: "Gorilla",
         desc: "Photo tagging app using AI image recognition.",
         tags: ["UI/UX", "2022"],
-        link: "/",
+        link: "/gorilla",
     },
     {
         title: "Leaplist",
         desc: "Gamified homework/task management app.",
         tags: ["UI/UX", "2023"],
-        link: "/",
+        link: "/leaplist",
     },
     {
         title: "Design Now! - Paul Rand",

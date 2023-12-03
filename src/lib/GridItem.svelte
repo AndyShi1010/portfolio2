@@ -41,9 +41,36 @@
         padding: 12px;
         transition: box-shadow 0.75s;
         text-decoration: none;
+        position: relative;
     }
     .grid-item:hover {
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 10px 4px rgba(255,255,255,0.3);
+    }
+
+    .grid-item:hover::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        backdrop-filter: grayscale(20%) brightness(80%);
+        background-image: linear-gradient(to right, transparent 0%, transparent 20%, rgba(255, 255, 255, 0.2) 50%, transparent 80%, transparent 100%);
+        background-size: 200% 200%;
+        background-repeat: no-repeat;
+        animation: 1s 1 grad-swipe forwards reverse ease-in;
+    }
+    @keyframes grad-swipe {
+        0% {
+            opacity: 0;
+            background-position: 0% 0%;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            background-position: 100% 100%;
+        }
     }
     img {
         width: min-content;
