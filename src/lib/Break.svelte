@@ -30,4 +30,7 @@
         position: absolute;
         left: 6px;
     }
+    .break img {
+        width: auto;
+    }
 </style>

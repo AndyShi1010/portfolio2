@@ -127,4 +127,7 @@
         margin-block-start: 16px;
         margin-block-end: 16px;
     }
+    :global(.generic-project-page img) {
+        width: 100%;
+    }
 </style>

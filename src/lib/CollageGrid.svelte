@@ -157,7 +157,7 @@
 		z-index: 999;
 	}
 	:global(.collage-grid img) {
-		width: 100%;
+		width: 100%;	
         cursor: pointer;
 	}
 </style>
