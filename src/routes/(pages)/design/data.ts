@@ -27,6 +27,12 @@ export const pages: PageMetadata[] = [
         link: "/leaplist",
         thumb: {src: "/Leaplist/thumb.png", alt: "Leaplist"},
     },
+    // {
+    //     title: "Dieter Rams Biopage",
+    //     desc: "A biographical webpage showcasing the work of product designer Dieter Rams",
+    //     tags: ["UI/UX", "2022"],
+    //     link: "/dieter-rams-biopage",
+    // },
     {
         title: "LiveTL",
         desc: "Livestream chat translation for YouTube and Twitch",

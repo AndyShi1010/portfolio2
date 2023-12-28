@@ -4,6 +4,7 @@
     import Break from '$lib/Break.svelte';
     import Chip from '$lib/Chip.svelte';
     import Button from '$lib/Button.svelte';
+    import CollageGrid from '$lib/CollageGrid.svelte';
     import { Icon } from 'svelte-remix'
     import { base } from '$app/paths'
 
@@ -36,13 +37,14 @@
     </div>
     <Break/>
     <Slideshow>
+      <!-- <CollageGrid images={[{path: "/LiveTL/LiveTL.png", alt: "LiveTL UI"}]}/>
+      <CollageGrid images={[{path: "/LiveTL/Layout Editor.png", alt: "Layout Editor"}]}/>
+      <CollageGrid images={[{path: "/LiveTL/Settings General.png", alt: "Settings"}]}/>
+      <CollageGrid images={[{path: "/LiveTL/Chat Layout.png", alt: "Chat Layout"}]}/> -->
       <img src="{base}/LiveTL/LiveTL.png" alt="LiveTL UI">
       <img src="{base}/LiveTL/Layout Editor.png" alt="Layout Editor">
       <img src="{base}/LiveTL/Settings General.png" alt="Settings">
-      <img src="{base}/LiveTL/Chat Layout.png" alt="Settings">
-      <!-- <img src="/burger.jpg" alt="Test3">
-      <img src="/grapes.jpg" alt="Test4"> -->
-      <!-- <video src="/video2.mp4" controls></video> -->
+      <img src="{base}/LiveTL/Chat Layout.png" alt="Chat Layout">
     </Slideshow>
     
     <p>

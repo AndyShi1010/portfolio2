@@ -2,6 +2,7 @@
     import type { PageData } from './$types';
     import Break from '$lib/Break.svelte';
 	import Chip from '$lib/Chip.svelte';
+    import CollageGrid from '$lib/CollageGrid.svelte';
 	import { Icon } from 'svelte-remix';
 	import { base } from '$app/paths';
 	import { pages } from '../data';
@@ -29,5 +30,13 @@
 		{/each}
 	</div>
 	<Break />
-    <img src="{base}/Tree/TreeFinal.png" alt="Tree">
+    <CollageGrid 
+        images={[
+            {
+                path: "/Tree/TreeFinal.png",
+                alt: "Tree"
+            }
+        ]}
+    />
+    <!-- <img src="{base}/Tree/TreeFinal.png" alt="Tree"> -->
 </div>

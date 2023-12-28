@@ -59,6 +59,27 @@
         background-repeat: no-repeat;
         animation: 1s 1 grad-swipe forwards reverse ease-in;
     }
+    /* .grid-item:hover::after {
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        background-image: url(https://grainy-gradients.vercel.app/noise.svg);
+        filter: grayscale(1);
+        animation: 1.5s fade-noise forwards ease-out;
+    }
+    @keyframes fade-noise {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 0.3;
+        }
+        100% {
+            opacity: 0;
+        }
+    } */
     @keyframes grad-swipe {
         0% {
             opacity: 0;

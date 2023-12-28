@@ -375,7 +375,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+        background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%),;
     }
 
     @keyframes breathe {
