@@ -52,7 +52,7 @@
         /* border: 1px solid rgba(255,255,255,0.5); */
         background-image: linear-gradient(to right, transparent 25%, white 50%, transparent 75%);
         background-size: 200% 200%;
-        animation: progress 0.5s infinite alternate-reverse cubic-bezier(0.65, 0, 0.35, 1);
+        animation: progress 0.5s infinite alternate-reverse cubic-bezier(0.7, 0, 0.3, 1);
         position: relative;
     }
 

@@ -53,7 +53,7 @@
         width: 100%;
         display: block;
         position: absolute;
-        backdrop-filter: grayscale(20%) brightness(80%);
+        backdrop-filter: saturate(120%) brightness(110%);
         background-image: linear-gradient(to right, transparent 0%, transparent 20%, rgba(255, 255, 255, 0.2) 50%, transparent 80%, transparent 100%);
         background-size: 200% 200%;
         background-repeat: no-repeat;
@@ -127,6 +127,7 @@
         margin: 0;
         font-weight: 400;
         font-size: 24px;
+        overflow-wrap: anywhere;
     }
     p {
         margin: 0;

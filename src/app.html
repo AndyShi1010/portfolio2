@@ -46,15 +46,32 @@
 		p {
 			font-family: var(--body-type);
 			line-height: 1.5;
-			font-size: 16px;
+			font-size: 18px;
 		}
 		a, a:visited {
 			color: white;
+		}
+		.guide-h {
+			width: 100%;
+			height: 1px;
+			background-color: white;
+			position: fixed;
+			top: 202px;
+		}
+		.guide-v {
+			width: 1px;
+			height: 100%;
+			background-color: white;
+			position: fixed;
+			left: 50%;
 		}
 		@media only screen and (min-width: 1080px) {
 			:root {
 				--nav-height: 48px;
 				--page-padding: 72px;
+			}
+			h1 {
+				font-size: 64px;
 			}
 		}
 
@@ -96,5 +113,7 @@
 			  // Our Javascript will go here.
 		  </script> -->
 		<div style="display: contents">%sveltekit.body%</div>
+		<!-- <div class="guide-h"></div>
+		<div class="guide-v"></div> -->
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { crossfade } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
+	import { crossfade, fade } from 'svelte/transition';
+	import { cubicOut, quadOut } from 'svelte/easing';
 	const [send, receive] = crossfade({ duration: 300, easing: cubicOut });
 
 	export let images: { path: string; alt: string }[];

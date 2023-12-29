@@ -225,7 +225,7 @@
         color: white;
         border: none;
         transition: border 0.5s, box-shadow 0.75s, background-position 0.75s cubic-bezier(0, 0.55, 0.45, 1);
-        background-image: linear-gradient(to bottom right, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 70%, rgba(255,255,255,0.0) 100%);
+        background-image: linear-gradient(to bottom right, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0.0) 100%);
         background-repeat: no-repeat;
         background-position: 0px 0px;
         background-size: 200% 200%;
@@ -335,7 +335,7 @@
         align-items: center;
         /* background-color: rgba(255,255,255,0.2); */
         position: absolute;
-        bottom: 100%;
+        bottom: calc(100% + var(--page-padding));
         left: 0;
         z-index: 20;
         /* backdrop-filter: blur(20px);
@@ -349,6 +349,8 @@
         line-height: 1.2;
         font-weight: 400;
         font-size: 20px;
+        display: flex;
+        gap: 8px;
         transition: background-color 0.2s;
     }
 
@@ -358,11 +360,11 @@
 
     .menu-background-blur {
         width: 100%;
-        height: 50vh;
+        height: 60vh;
         position: absolute;
         bottom: 0;
         left: 0;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px) saturate(0.8) brightness(0.8);
         mask-image: linear-gradient(to top, black 0, black 70%, transparent 100%);
         -webkit-mask-image: linear-gradient(to top, black 0, black 70%, transparent 100%);
         mask-image: -webkit-linear-gradient(to top, black 0, black 70%, transparent 100%);
@@ -371,7 +373,7 @@
 
     .menu-background {
         width: 100%;
-        height: 50vh;
+        height: 60vh;
         position: absolute;
         bottom: 0;
         left: 0;
