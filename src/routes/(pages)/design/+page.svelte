@@ -36,7 +36,7 @@
 
 <h1>Design</h1>
 <Break />
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore animi ipsa nam suscipit assumenda reprehenderit blanditiis distinctio possimus ut ea praesentium harum dolor repellat nisi molestias, modi consequatur iusto quaerat.</p>
+<p>A showcase of my design works, ranging from UI/UX design for applications, to branding and visual idenity development.</p>
 
 <GridList items={pages} root="/design">
 </GridList>

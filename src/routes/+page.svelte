@@ -2,9 +2,11 @@
 	import { fade, fly, blur } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 
-	let taglines = ['I like creating immersive experiences.', 'I do nerd stuff.', 'Just another guy on the internet.', 'Graphic design is my passion.'];
+	let taglines = ['I do nerd stuff.', 'I make cool stuff sometimes.', 'Design is my passion.', "My computer goes beep boop beep boop."];
 
-	let currTaglineIndex = 0;
+	let currTaglineIndex = Math.ceil(Math.random() * taglines.length - 1);
+
+	console.log(currTaglineIndex);
 
 	setInterval(() => {
 		currTaglineIndex++;
@@ -31,7 +33,7 @@
 		};
 	}
 
-	function blurswipe(
+	function lineswipe(
 		node: HTMLElement,
 		params: { delay?: number; duration?: number; easing?: (t: number) => number }
 	) {
@@ -41,10 +43,7 @@
 			easing: quadOut,
 			css: (t: number) => {
 				return `
-                    opacity: ${t};
-					transform: scaleX(${t});
-                    transform-origin: left center;
-					filter: blur(${20 - 20 * t}px);`;
+					animation: swipe 1s infinite forwards ease-in-out;`;
 			}
 		};
 	}
@@ -54,13 +53,18 @@
 	<!-- <div> -->
     <!-- <h3>Work in progress</h3> -->
 	<div class="container">
-		<span id="hello" in:blurfade={{ duration: 1000, delay: 500 }} out:blurfade={{ duration: 500 }}
+		<span id="hello" in:blurfade={{ duration: 750, delay: 500 }} out:blurfade={{ duration: 500 }}
 			>Hello! I am</span
 		>
 		<span id="name1" in:blurfade={{ duration: 1000, delay: 750 }} out:blurfade={{ duration: 500 }}
 			>Andy Shi</span
 		>
-        <span id="tagline" in:blurfade={{ duration: 1000, delay: 1250}} out:blurfade={{ duration: 500 }}>{taglines[currTaglineIndex]}</span>
+        <span id="tagline" in:blurfade={{ duration: 1000, delay: 1250}} out:blurfade={{ duration: 500 }}>
+			{taglines[currTaglineIndex]}
+			{#key currTaglineIndex}
+				<div id="underline" ></div>
+			{/key}
+		</span>
 	</div>
 
 
@@ -83,32 +87,78 @@
     } */
 
 	#hello {
-		font-size: 48px;
+		font-size: 32px;
         line-height: 1.5;
 	}
 	#name1,
 	#name2 {
-		font-size: 128px;
+		font-size: 64px;
         line-height: 1;
 	}
     #tagline {
         margin-top: var(--page-padding);
-        font-size: 24px;
+		width: max-content;
+        font-size: 18px;
         font-style: italic;
-        overflow: hidden; 
-        white-space: nowrap;
-        border-right: 4px solid white; 
-        animation: typewriter 1s 1s steps(20, end), type-cursor 1s infinite;
+        overflow: hidden;
+		position: relative; 
+		padding: 8px 4px;
     }
 
-    @keyframes typewriter {
-    0% { width: 0 }
-    100% { width: 100% }
-    }
-
-    @keyframes type-cursor {
-    0%, 100% { border-color: transparent }
-    50% { border-color: white; }
-    }
-
+	/* #tagline::after {
+		content: '';
+		height: 100%;
+		width: 2px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: white;
+		animation: blink 0.5s 0.5s infinite alternate cubic-bezier(0.7, 0, 0.3, 1); 
+	} */
+	#underline {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.5) 100%);
+		animation: swipe 1s 1 forwards cubic-bezier(0.7, 0, 0.3, 1); 
+	}
+	@keyframes swipe {
+		0% {
+			right: 100%;
+			left: 0;
+			width: 0;
+		}
+		50% {
+			right: 0;
+			width: 100%;
+		}
+		100% {
+			right: 0;
+			left: 100%;
+			width: 0%;
+		}
+	}
+	/* @keyframes blink {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	} */
+	@media only screen and (min-width: 1080px) {
+		#hello {
+			font-size: 48px;
+        	line-height: 1.5;
+		}
+		#name1,
+		#name2 {
+			font-size: 128px;
+			line-height: 1;
+		}
+		#tagline {
+			font-size: 24px;
+		}
+	}
 </style>
