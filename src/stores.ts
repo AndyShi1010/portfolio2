@@ -4,6 +4,8 @@ import { writable, type Writable } from 'svelte/store'
 
 export const transitioning: Writable<Boolean> = writable(false);
 
+export const loading: Writable<Boolean> = writable(true)
+
 // transitioning.update((currentValue) => true);
 
 

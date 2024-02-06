@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"3js": "github:mbalex99/threejs-unrealbloompass-transparent-background-example",
 		"install": "^0.13.0",
 		"npm": "^9.6.1",
 		"resize-observer-polyfill": "^1.5.1",

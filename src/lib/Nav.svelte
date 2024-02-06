@@ -74,22 +74,22 @@
                 </button>
                 <div id="nav-menu" class:disabled={showNavMenu == false}>
                 {#if showNavMenu}
+                    <a href="{base}/" class="menu-link" 
+                            in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} 
+                            out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}
+                        >Home</a>
                     <a href="{base}/about" class="menu-link" 
-                        in:fly={{y: 40, duration: 1000, delay: 500, easing: expoOut}} 
-                        out:fly={{y: 40, duration: 1000, delay: 300, easing: expoOut}}
-                    >About</a>
-                    <a href="{base}/code" class="menu-link" 
                         in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} 
                         out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}
-                    >Code</a>
-                    <a href="{base}/design" class="menu-link" 
+                    >About</a>
+                    <a href="{base}/code" class="menu-link" 
                         in:fly={{y: 40, duration: 1000, delay: 700, easing: expoOut}} 
                         out:fly={{y: 40, duration: 1000, delay: 100, easing: expoOut}}
-                    >Design</a>
-                    <a href="{base}/" class="menu-link" 
+                    >Code</a>
+                    <a href="{base}/design" class="menu-link" 
                         in:fly={{y: 40, duration: 1000, delay: 800, easing: expoOut}} 
                         out:fly={{y: 40, duration: 1000, easing: expoOut}}
-                    >Home</a>
+                    >Design</a>
                 {/if}
                 </div>
             </div>
@@ -225,10 +225,11 @@
         color: white;
         border: none;
         transition: border 0.5s, box-shadow 0.75s, background-position 0.75s cubic-bezier(0, 0.55, 0.45, 1);
-        background-image: linear-gradient(to bottom right, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0.0) 100%);
+        /* background-image: linear-gradient(to bottom right, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.1) 40%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 60%, rgba(255,255,255,0.0) 100%); */
+        background-image: radial-gradient(farthest-side, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.0) 100%);
         background-repeat: no-repeat;
-        background-position: 0px 0px;
-        background-size: 200% 200%;
+        background-position: 0px -100%;
+        background-size: 100% 200%;
         box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.5);
         font-family: var(--default-type);
         line-height: 1.2;
@@ -245,13 +246,14 @@
         height: 40px;
         width: 120px;
     }
-    .nav-button:hover, .nav-button:focus, #home-button:hover, #home-button:focus, #hamburger-button:hover, #hamburger-button.menu-open {
+    .nav-button:hover, .nav-button.selected:hover, .nav-button:focus, #home-button:hover, #home-button:focus, #hamburger-button:hover, #hamburger-button.menu-open {
         /* border: 2px solid white; */
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 20px 8px rgba(255,255,255,0.3);
-        background-position: 0% 100%;
+        background-position: 0% 50%;
     }
     .nav-button.selected {
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,0.75), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 20px 0px rgba(255,255,255,0.3);
+        background-position: 0% 0%;
     }
     .nav-button::before, #home-button:before, #hamburger-button:before {
         content: '';
@@ -326,7 +328,14 @@
         background-color: rgba(255,255,255,0.1);
     }
 
+    .social-link :global(svg) {
+        opacity: 0.7;
+        transition: opacity 0.75s;
+    }
 
+    .social-link:hover :global(svg) {
+        opacity: 1;
+    }
 
     #nav-menu, #social-menu {
         width: 100%;

@@ -9,11 +9,21 @@
     import { page } from '$app/stores';
     import { scale, fade, blur } from 'svelte/transition'
     import { onMount } from 'svelte';
-    import { transitioning } from '../stores'
+    import { loading } from '../stores'
     import Loader from '$lib/Loader.svelte';
 
     let ready = false;
-    onMount(() => {setTimeout(() => {ready = true}, 1500)});
+    onMount(() => {setTimeout(() => {
+        ready = true
+    }, 500)});
+
+    
+    let modelLoading: Boolean = true;
+    loading.subscribe((val) => {
+        setTimeout(() => {
+            modelLoading = val
+        }, 0)
+    })
 
     // let isTransitioning;
 
@@ -21,58 +31,19 @@
     //     isTransitioning = transitioning;
     // })
 
-    console.log($page.status)
-
-    // console.log(prevRoute);
-
-    // let previousPage: string;
-    // prevRoute.subscribe((data) => {
-    //     previousPage = data;
-    //     // previousPage = from?.url.pathname || previousPage
-    //     //console.log(data);
-    // })
-
-    
-    // beforeNavigate(() => {
-    //     let currRoute: string = $page.url.pathname;
-    //     setContext('route', currRoute);
-    //     //console.log(getContext('route'));
-    //     console.log("Test");
-    // })
-    // let path;
-
-    // function getPath(currentPath) {
-    //     path = currentPath;
-    //     setContext('route', path);
-    //     console.log(getContext('route'));
-    // }
-
-    // $: getPath(from?.url.pathname);
-    // export let prevPath = writable(base);
-    // prevPath.subscribe()
-    // let previousPage: string = base ;
-
-    // afterNavigate(({from}) => {
-    //     prevRoute.update((currentData) => {
-    //         return from?.url.pathname || previousPage;
-    //     });
-    //     // previousPage = from?.url.pathname || previousPage
-    //     //console.log(previousPage);
-    // }) 
+    // console.log($page.status)
 </script>
 
-{#if ready}
-<div id="page">
-    <!-- <p>{$transitioning}</p> -->
-    {#if $page.status <= 400}
-        <ThreeCanvas />
-        <img src="{base}/test.jpg" alt="Test">
+{#if $page.status <= 400}
+    {#if modelLoading}
+        <Loader></Loader>
     {/if}
     <slot></slot>
     <Nav/>
-</div>
+    <ThreeCanvas />
 {:else}
-    <Loader></Loader>
+    <slot></slot>
+    <Nav/>
 {/if}
 
 <style>

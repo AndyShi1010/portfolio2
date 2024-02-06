@@ -39,7 +39,7 @@
         z-index: 20;
     }
     #loader-bkg {
-        background-color: black;
+        background-color: #28142A;
         width: 100%;
         height: 100%;
         display: flex;

@@ -2,7 +2,7 @@
 	import { fade, fly, blur } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 
-	let taglines = ['I do nerd stuff.', 'I make cool stuff sometimes.', 'Design is my passion.', "My computer goes beep boop beep boop."];
+	let taglines = ['I do nerd stuff.', 'I make cool stuff sometimes.', 'Design is my passion.', 'Professional button-masher.', "My computer goes beep boop beep boop.", "Just a monkey slamming on a keyboard."];
 
 	let currTaglineIndex = Math.ceil(Math.random() * taglines.length - 1);
 
@@ -53,13 +53,13 @@
 	<!-- <div> -->
     <!-- <h3>Work in progress</h3> -->
 	<div class="container">
-		<span id="hello" in:blurfade={{ duration: 750, delay: 500 }} out:blurfade={{ duration: 500 }}
+		<span id="hello" in:blurfade={{ duration: 750, delay: 1200 }} out:blurfade={{ duration: 500 }}
 			>Hello! I am</span
 		>
-		<span id="name1" in:blurfade={{ duration: 1000, delay: 750 }} out:blurfade={{ duration: 500 }}
+		<span id="name1" in:blurfade={{ duration: 750, delay: 1400 }} out:blurfade={{ duration: 500 }}
 			>Andy Shi</span
 		>
-        <span id="tagline" in:blurfade={{ duration: 1000, delay: 1250}} out:blurfade={{ duration: 500 }}>
+        <span id="tagline" in:blurfade={{ duration: 750, delay: 2000}} out:blurfade={{ duration: 500 }}>
 			{taglines[currTaglineIndex]}
 			{#key currTaglineIndex}
 				<div id="underline" ></div>
@@ -73,9 +73,9 @@
 		display: flex;
 		flex-direction: column;
 		position: absolute;
-		top: 50%;
-		left: calc(var(--page-padding) * 2);
-		transform: translateY(calc(-50% - var(--nav-height) / 2 - var(--page-padding)));
+		bottom: 20%;
+		top: initial;
+		left: var(--page-padding);
 		/* outline: solid 1px rgba(0,0,0,0.5); */
 	}
 	/* .guide {
@@ -148,6 +148,12 @@
 		}
 	} */
 	@media only screen and (min-width: 1080px) {
+		.container {
+			bottom: initial;
+			top: 50%;
+			left: calc(var(--page-padding) * 2);
+			transform: translateY(calc(-50% - var(--nav-height) / 2 - var(--page-padding)));
+		}
 		#hello {
 			font-size: 48px;
         	line-height: 1.5;

@@ -1,6 +1,6 @@
 <script lang='ts'>
     import { fade, fly } from 'svelte/transition'
-    import { quadOut, expoOut, elasticOut } from 'svelte/easing'
+    import { quadOut, cubicOut } from 'svelte/easing'
     import { Svroller, Svrollbar } from 'svrollbar'
     import { afterUpdate, beforeUpdate, onMount } from 'svelte'
     import { beforeNavigate, afterNavigate } from '$app/navigation';
@@ -55,7 +55,7 @@
     on:outroend={() => {transitioning.set(false);}}
     on:introstart={() => {transitioning.set(true);}} 
     on:introend={() => {transitioning.set(false);}} />
-    <div class="page-background" in:fly="{{x: -500, duration: 750, easing: quadOut}}" out:fly="{{x: -500, duration: 750, easing: quadOut}}"  />
+    <div class="page-background" in:fly="{{x: -500, duration: 1000, easing: cubicOut}}" out:fly="{{x: -500, duration: 1000, easing: cubicOut}}"  />
 {/if}
 
 <!-- <div class="page-background-blur" />
