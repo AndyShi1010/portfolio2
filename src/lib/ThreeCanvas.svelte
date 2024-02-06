@@ -3,6 +3,7 @@
     import { base } from '$app/paths'
     import * as THREE from 'three';
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+    import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
     // import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
     import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
     import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
@@ -58,7 +59,8 @@
         // scene.add( gridHelper );
 
         const loader = new GLTFLoader();
-        loader.loadAsync(`${base}/FlowerTestBaked.gltf`, (e) => {
+        loader.setMeshoptDecoder(MeshoptDecoder);
+        loader.loadAsync(`${base}/flowercc.gltf`, (e) => {
             loadProgress.set(e.loaded / e.total);
         }).then((gltf) => {
             let model = gltf.scene;
