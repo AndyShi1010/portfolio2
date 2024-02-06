@@ -35,11 +35,12 @@
 </script>
 
 {#if $page.status <= 400}
-    {#if modelLoading}
+    {#if !modelLoading}
+        <slot></slot>
+        <Nav/>
+    {:else}
         <Loader></Loader>
     {/if}
-    <slot></slot>
-    <Nav/>
     <ThreeCanvas />
 {:else}
     <slot></slot>
