@@ -8,7 +8,7 @@
     import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
     // import { UnrealBloomPass } from './TransparentBackgroundFixedUnrealBloomPass'
     import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
-    import { loading } from '../stores';
+    import { loading, loadProgress } from '../stores';
     let canvas: Element;
 
     onMount(() => {
@@ -58,7 +58,9 @@
         // scene.add( gridHelper );
 
         const loader = new GLTFLoader();
-        loader.loadAsync(`${base}/FlowerTestBaked.gltf`).then((gltf) => {
+        loader.loadAsync(`${base}/FlowerTestBaked.gltf`, (e) => {
+            loadProgress.set(e.loaded / e.total);
+        }).then((gltf) => {
             let model = gltf.scene;
             let modelId = model.id;
             model.rotation.x = 1

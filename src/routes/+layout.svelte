@@ -9,7 +9,7 @@
     import { page } from '$app/stores';
     import { scale, fade, blur } from 'svelte/transition'
     import { onMount } from 'svelte';
-    import { loading } from '../stores'
+    import { loading, loadProgress } from '../stores'
     import Loader from '$lib/Loader.svelte';
 
     let ready = false;

@@ -6,6 +6,8 @@ export const transitioning: Writable<Boolean> = writable(false);
 
 export const loading: Writable<Boolean> = writable(true)
 
+export const loadProgress: Writable<Number> = writable(0);
+
 // transitioning.update((currentValue) => true);
 
 

@@ -1,8 +1,9 @@
-<script>
+<script lang='ts'>
     import { onMount } from 'svelte';
     import { blur, fade } from 'svelte/transition'
     let ready = false;
     let ellipsis = "";
+    import { loadProgress } from '../stores'
     onMount(() => {
         ready = true;
     });
@@ -15,10 +16,18 @@
         }
     },500)
 
+    let progress: Number;
+
+    loadProgress.subscribe((val) => {
+        progress = val;
+    })
+
+
 
 </script>
 
 {#if ready}
+{progress}
 <div id="loader-container" out:fade={{duration: 1000, delay: 500}}>
     <div id="loader-bkg">
         <div id="loader-contents" in:blur={{amount: 10, duration: 500}} out:blur={{amount: 10, duration: 500}}>
