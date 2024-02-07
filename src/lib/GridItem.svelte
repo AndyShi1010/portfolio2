@@ -36,12 +36,14 @@
     .grid-item {
         display: grid;
         /* flex-wrap: wrap; */
-        grid-template-columns: minmax(140px, 30%) auto;
+        /* grid-template-columns: minmax(140px, 30%) auto; */
+        grid-template-columns: auto;
         column-gap: 16px;
-        padding: 12px;
+        padding: 16px;
         transition: box-shadow 0.75s;
         text-decoration: none;
         position: relative;
+        container: item / inline-size;
     }
     .grid-item:hover {
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 10px 4px rgba(255,255,255,0.3);
@@ -59,6 +61,26 @@
         background-repeat: no-repeat;
         animation: 1s 1 grad-swipe forwards reverse ease-in;
     }
+
+    /* .grid-item::after {
+        content: '';
+        position: absolute;
+        opacity: 0;
+        right: 32px;
+        bottom: 50%;
+        width: 120px;
+        height: 48px;
+        transform: translateY(50%);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('Arrow.svg');
+        transition: 0.25s;
+    }
+    .grid-item:hover::after {
+        right: 12px;
+        opacity: 0.3;
+    } */
+    
     /* .grid-item:hover::after {
         content: '';
         height: 100%;
@@ -120,7 +142,8 @@
     .item-contents {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        padding: 8px 0px 0px 0px;
+        gap: 8px;
         flex-grow: 4;
     }
     h2 {
@@ -133,7 +156,14 @@
         margin: 0;
         font-style: italic;
         font-size: 14px;
+        line-height: 1;
     }
+    @container (min-width: 720px) {
+        .grid-item {
+            background-color: blue;
+        }
+    }
+    
     @media only screen and (min-width: 1080px) { 
         h2 {
             font-size: 32px;
@@ -142,10 +172,22 @@
             font-size: 16px;
         }
         .grid-item { 
-            padding: 16px;
+            padding: 24px;
+            column-gap: 32px;
+            /* grid-template-columns: minmax(140px, 30%) auto; */
         }
         .item-contents { 
             gap: 8px;
+            padding: 8px 0px;
         }
+        /* .grid-item::after {
+            right: 32px;
+            bottom: 50%;
+            width: 180px;
+            height: 72px;
+        }
+        .grid-item:hover::after {
+            right: 24px;
+        } */
     }
 </style>

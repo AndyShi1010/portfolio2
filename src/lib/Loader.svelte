@@ -1,6 +1,7 @@
 <script lang='ts'>
     import { onMount } from 'svelte';
     import { blur, fade } from 'svelte/transition'
+    import { cubicOut } from 'svelte/easing'
     let ready = false;
     let ellipsis = "";
     import { loadProgress } from '../stores'
@@ -28,7 +29,7 @@
 
 {#if ready}
 {progress}
-<div id="loader-container" out:fade={{duration: 1000, delay: 500}}>
+<div id="loader-container" out:fade={{duration: 1500, delay: 500, easing: cubicOut}}>
     <div id="loader-bkg">
         <div id="loader-contents" in:blur={{amount: 10, duration: 500}} out:blur={{amount: 10, duration: 500}}>
             <p>Loading{ellipsis}</p>
@@ -48,7 +49,7 @@
         z-index: 20;
     }
     #loader-bkg {
-        background-color: #28142A;
+        background-color: #1a0d1c;
         width: 100%;
         height: 100%;
         display: flex;

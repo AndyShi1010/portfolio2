@@ -134,7 +134,7 @@
                 <a href="https://github.com/AndyShi1010" class="social-link" target="_blank">
                     <Icon name="github-line" tabindex="-1"/>
                 </a>
-                <a href="" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/in/andyshi10/" class="social-link" target="_blank">
                     <Icon name="linkedin-box-line" tabindex="-1"/>
                 </a>
                 <a href="https://twitter.com/and0shi" class="social-link" target="_blank">
@@ -163,7 +163,7 @@
                 <a href="https://github.com/AndyShi1010" class="social-link" target="_blank">
                     <Icon name="github-line" tabindex="-1"/>
                 </a>
-                <a href="" class="social-link" target="_blank">
+                <a href="https://www.linkedin.com/in/andyshi10/" class="social-link" target="_blank">
                     <Icon name="linkedin-box-line" tabindex="-1"/>
                 </a>
                 <a href="https://twitter.com/and0shi" class="social-link" target="_blank">

@@ -22,7 +22,7 @@
     loading.subscribe((val) => {
         setTimeout(() => {
             modelLoading = val
-        }, 0)
+        }, 500)
     })
 
     // let isTransitioning;

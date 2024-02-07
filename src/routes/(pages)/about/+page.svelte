@@ -7,8 +7,8 @@
 <!-- <AnimatedPage> -->
     <h1>About</h1>
     <Break />
-    <h2>This is a test!</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil distinctio repellat placeat dolore tempore culpa laudantium accusantium et voluptate cumque vel accusamus, quod maiores nesciunt facere voluptatem non sunt earum.</p>
+    <h2>Hi! My name is Andy Shi</h2>
+    <p>I am a freshly graduated Computer Science major with a minor in Visual Communications Design.</p>
 <!-- </AnimatedPage> -->
 
 

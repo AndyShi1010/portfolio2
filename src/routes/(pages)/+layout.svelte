@@ -305,7 +305,7 @@
             padding-right: calc(var(--page-padding) * 1.5);
         }
         .page-background {
-            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 70% ,rgba(0,0,0,0) 100%);
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 70% ,rgba(0,0,0,0) 100%);
         }
         .page-background-blur {
             mask-image: linear-gradient(to right, black 0, black 50%, transparent 60%, transparent 100%);

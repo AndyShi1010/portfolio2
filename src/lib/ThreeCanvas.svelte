@@ -35,7 +35,7 @@
         const height = window.innerHeight;
         const camera = new THREE.PerspectiveCamera(4, width / height, 0.1, 1000);
         camera.position.z = window.innerWidth < 1080 ? 100 : 70;
-        camera.position.x = window.innerWidth < 1080 ? 0 : -2;
+        // camera.position.x = window.innerWidth < 1080 ? 0 : -2;
 
         const bloom = new UnrealBloomPass(
             new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -58,6 +58,25 @@
         // const gridHelper = new THREE.GridHelper( 1, 20 );
         // scene.add( gridHelper );
 
+        // const particlesGeometry = new THREE.BufferGeometry;
+        // const particlesCount = 5000;
+
+        // const positions = new Float32Array(particlesCount * 3);
+
+        // for (let i = 0; i < particlesCount; i++) {
+        //     positions[i] = (Math.random() - 0.5) * 10;
+        // }
+
+        // const particleTexture = new THREE.TextureLoader().load(`${base}/Particle.png`)
+        // particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3))
+        // const paraticlesMesh = new THREE.Points(particlesGeometry, new THREE.PointsMaterial({
+        //     size: 2,
+        //     map: particleTexture,
+        //     transparent: true,
+        //     color: 'pink',
+        // }))
+        // scene.add(paraticlesMesh)
+
         const loader = new GLTFLoader();
         loader.setMeshoptDecoder(MeshoptDecoder);
         loader.loadAsync(`${base}/flowercc.gltf`, (e) => {
@@ -65,13 +84,21 @@
         }).then((gltf) => {
             let model = gltf.scene;
             let modelId = model.id;
-            model.rotation.x = 1
+            model.rotation.x = 1;
+            model.position.x = window.innerWidth < 1080 ? 0 : 2;
             // model.rotation.y = 100;
             scene.add(model);
             loading.set(false); 
             animate(renderer, camera, scene, modelId, composer);
             window.addEventListener('resize', () => {
-                resize(renderer, camera);
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                camera.aspect = width / height;
+                camera.position.z = window.innerWidth < 1080 ? 100 : 70;
+                // camera.position.x = window.innerWidth < 1080 ? 0 : -2;
+                model.position.x = window.innerWidth < 1080 ? 0 : 2;
+                camera.updateProjectionMatrix();    
+                renderer.setSize(width, height);
             });
             window.addEventListener('mousemove', (e) => {
                 let centerX = window.innerWidth * 0.5;
@@ -79,25 +106,15 @@
                 
                 // model.rotation.z = (e.clientX - centerX) / centerX * -0.2;
                 model.rotation.x = 1 + (e.clientY - centerY) / centerY * 0.2;
+                // paraticlesMesh.position.x = (e.clientX - centerX) / centerX * 2
             })
         });
-    }
-
-    function resize(rend: THREE.WebGLRenderer, cam: THREE.PerspectiveCamera) {
-        // const width = window.innerWidth < 1080 ? window.innerWidth : window.innerWidth / 2;
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        cam.aspect = width / height;
-        cam.position.z = window.innerWidth < 1080 ? 100 : 70;
-        cam.position.x = window.innerWidth < 1080 ? 0 : -2;
-        cam.updateProjectionMatrix();
-        rend.setSize(width, height);
     }
 
     function animate(rend: THREE.WebGLRenderer, cam: THREE.PerspectiveCamera, scene: THREE.Scene, modelId: number, composer: EffectComposer) {
         let model = scene.getObjectById(modelId);
         if (model) {
-            model.rotation.y += 0.01
+            model.rotation.y += 0.005
         }
         composer.render();
         // cam.rotation.z += Math.PI/100
