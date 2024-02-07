@@ -1,7 +1,7 @@
 <script lang='ts'>
     import { onMount } from 'svelte';
     import { blur, fade } from 'svelte/transition'
-    import { cubicOut } from 'svelte/easing'
+    import { cubicOut, quadOut } from 'svelte/easing'
     let ready = false;
     let ellipsis = "";
     import { loadProgress } from '../stores'
@@ -23,13 +23,42 @@
         progress = val;
     })
 
+    let innerWidth: number = 0;
+    let innerHeight: number = 0;
+    $: radius = Math.max(innerHeight, innerWidth)
+    function clipZoom(
+		node: HTMLElement,
+		params: { delay?: number; duration?: number; easing?: (t: number) => number }
+	) {
+		return {
+			delay: params.delay,
+			duration: params.duration,
+			easing: cubicOut,
+			css: (t: number) => {
+				// return `
+                //     opacity: ${t};
+				// 	transform: scale(${0.25 * t + 0.75});
+                //     transform-origin: left center;
+				// 	filter: blur(${20 - 20 * t}px);`;
+                return `
+                    opacity: ${t}
+                    mask-image: radial-gradient(circle ${(1 - t) * radius}px, rgba(0,0,0,0) 0%, rgba(0,0,0,${t}) 100%);
+                    -webkit-mask-image: radial-gradient(circle ${(1 - t) * radius}px, rgba(0,0,0,0) 0%, rgba(0,0,0,${t}) 100%);
+                    mask-image: -webkit-linear-gradient(circle ${(1 - t) * radius}px, rgba(0,0,0,0) 0%, rgba(0,0,0,${t}) 100%);
+                    -webkit-mask-image: -webkit-linear-gradient(circle ${(1 - t) * radius}px, rgba(0,0,0,0) 0%, rgba(0,0,0,${t}) 100%);
+                    `;
+			}
+		};
+	}
 
 
 </script>
 
+<svelte:window bind:innerWidth bind:innerHeight  />
+
 {#if ready}
-{progress}
-<div id="loader-container" out:fade={{duration: 1500, delay: 500, easing: cubicOut}}>
+<!-- {progress} -->
+<div id="loader-container" out:clipZoom={{duration: 1500, delay: 500}}>
     <div id="loader-bkg">
         <div id="loader-contents" in:blur={{amount: 10, duration: 500}} out:blur={{amount: 10, duration: 500}}>
             <p>Loading{ellipsis}</p>
