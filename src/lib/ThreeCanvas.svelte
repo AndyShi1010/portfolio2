@@ -34,7 +34,7 @@
         const width = window.innerWidth;
         const height = window.innerHeight;
         const camera = new THREE.PerspectiveCamera(4, width / height, 0.1, 1000);
-        camera.position.z = window.innerWidth < 1080 ? 100 : 70;
+        camera.position.z = window.innerWidth < 1080 ? 120 : 70;
         // camera.position.x = window.innerWidth < 1080 ? 0 : -2;
 
         const bloom = new UnrealBloomPass(
@@ -94,7 +94,7 @@
                 const width = window.innerWidth;
                 const height = window.innerHeight;
                 camera.aspect = width / height;
-                camera.position.z = window.innerWidth < 1080 ? 100 : 70;
+                camera.position.z = window.innerWidth < 1080 ? 120 : 70;
                 // camera.position.x = window.innerWidth < 1080 ? 0 : -2;
                 model.position.x = window.innerWidth < 1080 ? 0 : 2;
                 camera.updateProjectionMatrix();    
@@ -106,6 +106,14 @@
                 
                 // model.rotation.z = (e.clientX - centerX) / centerX * -0.2;
                 model.rotation.x = 1 + (e.clientY - centerY) / centerY * 0.2;
+                // paraticlesMesh.position.x = (e.clientX - centerX) / centerX * 2
+            })
+            window.addEventListener('touchmove', (e) => {
+                let centerX = window.innerWidth * 0.5;
+                let centerY = window.innerHeight * 0.5;
+                
+                // model.rotation.z = (e.clientX - centerX) / centerX * -0.2;
+                model.rotation.x = 1 + (e.touches[0].clientY - centerY) / centerY * 0.2;
                 // paraticlesMesh.position.x = (e.clientX - centerX) / centerX * 2
             })
         });

@@ -171,7 +171,7 @@
         .grid-item {
             padding: 24px;
             column-gap: 32px;
-            grid-template-columns: minmax(140px, 30%) auto;
+            grid-template-columns: minmax(140px, 40%) auto;
         }
     }
     

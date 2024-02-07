@@ -107,7 +107,7 @@
                         <Icon name="github-line" tabindex="-1"/>
                         Github
                     </a>
-                    <a href="" target="_blank" 
+                    <a href="https://www.linkedin.com/in/andyshi10/" target="_blank" 
                         in:fly={{y: 40, duration: 1000, delay: 600, easing: expoOut}} 
                         out:fly={{y: 40, duration: 1000, delay: 200, easing: expoOut}}
                     >
