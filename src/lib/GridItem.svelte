@@ -11,6 +11,7 @@
     export let path: string;
 </script>
 
+<div class="container">
 <a class="grid-item" href={base + path}>
     {#if img}
         <div class="img-container">
@@ -31,8 +32,12 @@
         </div>
     </div>
 </a>
+</div>
 
 <style>
+    .container {
+        container: item / inline-size;
+    }
     .grid-item {
         display: grid;
         /* flex-wrap: wrap; */
@@ -43,7 +48,6 @@
         transition: box-shadow 0.75s;
         text-decoration: none;
         position: relative;
-        container: item / inline-size;
     }
     .grid-item:hover {
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 10px 4px rgba(255,255,255,0.3);
@@ -156,29 +160,36 @@
         margin: 0;
         font-style: italic;
         font-size: 14px;
-        line-height: 1;
     }
-    @container (min-width: 720px) {
-        .grid-item {
-            background-color: blue;
-        }
-    }
-    
-    @media only screen and (min-width: 1080px) { 
+    @container item (width > 640px) {
         h2 {
             font-size: 32px;
         }
         p {
             font-size: 16px;
         }
-        .grid-item { 
+        .grid-item {
             padding: 24px;
             column-gap: 32px;
+            grid-template-columns: minmax(140px, 30%) auto;
+        }
+    }
+    
+    @media only screen and (min-width: 1080px) { 
+        /* h2 {
+            font-size: 32px;
+        }
+        p {
+            font-size: 16px;
+        } */
+        .grid-item { 
+            /* padding: 24px;
+            column-gap: 32px; */
             /* grid-template-columns: minmax(140px, 30%) auto; */
         }
         .item-contents { 
-            gap: 8px;
-            padding: 8px 0px;
+            /* gap: 8px;
+            padding: 8px 0px; */
         }
         /* .grid-item::after {
             right: 32px;
