@@ -12,10 +12,10 @@
     import { loading, loadProgress } from '../stores'
     import Loader from '$lib/Loader.svelte';
 
-    let ready = false;
+    let timeout = false;
     onMount(() => {setTimeout(() => {
-        ready = true
-    }, 500)});
+        timeout = true
+    }, 15000)});
 
     
     let modelLoading: Boolean = true;
@@ -35,7 +35,7 @@
 </script>
 
 {#if $page.status <= 400}
-    {#if !modelLoading}
+    {#if !modelLoading || timeout}
         <slot></slot>
         <Nav/>
     {:else}
