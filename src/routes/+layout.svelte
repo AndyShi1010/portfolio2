@@ -82,6 +82,7 @@
     :global(.generic-project-page .chip-container) {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 8px;
         margin-block-start: 16px;
         margin-block-end: 16px;

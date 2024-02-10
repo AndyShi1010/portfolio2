@@ -86,7 +86,7 @@
         justify-content: center;
     }
     #loader-contents #progress-bar{
-        width: 220px;
+        width: min(220px, 50vw);
         height: 4px;
         /* border: 1px solid rgba(255,255,255,0.5); */
         background-image: linear-gradient(to right, transparent 25%, white 50%, transparent 75%);

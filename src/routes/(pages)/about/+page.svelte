@@ -19,14 +19,16 @@
 
 <div class="button-row">
     <h3>Hire Me!</h3>
-    <Button icon="iconLeft" to="{base}/Res2.2024.pdf" target="_blank">
-        <Icon name="article-line" width="16" height="16" tabindex="-1" />
-        View my Résumé
-    </Button>
-    <Button icon="iconLeft" href="mailto:andy1010999@outlook.com">
-        <Icon name="mail-send-line" width="16" height="16" tabindex="-1" />
-        Email Me
-    </Button>
+    <div id="buttons">
+        <Button icon="iconLeft" to="{base}/Res2.2024.pdf" target="_blank">
+            <Icon name="article-line" width="16" height="16" tabindex="-1" />
+            View my Résumé
+        </Button>
+        <Button icon="iconLeft" href="mailto:andy1010999@outlook.com">
+            <Icon name="mail-send-line" width="16" height="16" tabindex="-1" />
+            Email Me
+        </Button>
+    </div>
 </div>
 
 <Accordion title="Skills" open={false}>
@@ -159,13 +161,21 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
         gap: 8px;
         margin-block-start: 16px;
+    }
+    #buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
     }
     .button-row h3 {
         margin-block-start: 0;
         margin-block-end: 0;
-        margin-right: 16px;
+        margin-right: 8px;
     }
 </style>
 
