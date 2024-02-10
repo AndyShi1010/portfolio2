@@ -243,6 +243,8 @@
     :global(.simplebar-wrapper) {
         mask-image: linear-gradient(to bottom, transparent 0, black 32px, black calc(100% - 32px), transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 32px, black calc(100% - 32px), transparent 100%);
+        mask-image: -webkit-linear-gradient(to bottom, transparent 0, black 32px, black calc(100% - 32px), transparent 100%);
+        -webkit-mask-image: -webkit-linear-gradient(to bottom, transparent 0, black 32px, black calc(100% - 32px), transparent 100%);
     }
     
     

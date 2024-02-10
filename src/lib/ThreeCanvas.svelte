@@ -80,7 +80,7 @@
         const loader = new GLTFLoader();
         loader.setMeshoptDecoder(MeshoptDecoder);
         loader.loadAsync(`${base}/flowercc.gltf`, (e) => {
-            loadProgress.set(e.loaded / e.total);
+            console.log(e.loaded / e.total);
         }).then((gltf) => {
             let model = gltf.scene;
             let modelId = model.id;

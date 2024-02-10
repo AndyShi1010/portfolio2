@@ -28,7 +28,7 @@
     $: {if (mobile == false || mobile2 == false) {showSocialMenu = false}}
 
     function toggleNavMenu() {
-        console.log("toggle menu");
+        // console.log("toggle menu");
         showSocialMenu = false;
         document.body.removeEventListener('click', toggleSocialMenu);
         showNavMenu = !showNavMenu;
@@ -40,7 +40,7 @@
     }
 
     function toggleSocialMenu() {
-        console.log("toggle menu");
+        // console.log("toggle menu");
         showNavMenu = false;
         document.body.removeEventListener('click', toggleNavMenu);
         showSocialMenu = !showSocialMenu;

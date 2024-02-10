@@ -100,7 +100,7 @@
 
     onMount(() => {
         loading = false;
-        console.log("mount")
+        // console.log("mount")
         contents?.children[0].classList.add("current");
     })
 

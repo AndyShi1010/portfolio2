@@ -2,11 +2,9 @@
 	import { fade, fly, blur } from 'svelte/transition';
 	import { quadOut } from 'svelte/easing';
 
-	let taglines = ['I do nerd stuff.', 'I make cool stuff sometimes.', 'Design is my passion.', 'Professional button-masher.', "My computer goes beep boop beep boop.", "Just a monkey slamming on a keyboard."];
+	let taglines = ['Aspiring creative technologist.', 'I do nerd stuff.', 'I make cool stuff sometimes.', 'Design is my passion. Code is my craft.', 'Professional button-masher.', "My computer goes beep boop beep boop.", "Just a monkey slamming on a keyboard."];
 
 	let currTaglineIndex = Math.ceil(Math.random() * taglines.length - 1);
-
-	console.log(currTaglineIndex);
 
 	setInterval(() => {
 		currTaglineIndex++;
