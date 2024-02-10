@@ -240,6 +240,7 @@
     #home-button, #hamburger-button {
         width: 40px;
         height: 40px;
+        display: inline-flex;
     }
 
     .nav-button {
