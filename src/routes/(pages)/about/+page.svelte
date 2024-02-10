@@ -113,6 +113,8 @@
     </div>
 </Accordion>
 
+<p id="credits">Website built with <a href="https://kit.svelte.dev/" target="_blank">Sveltekit</a>, <a href="https://threejs.org/" target="_blank">ThreeJS</a> and <a href="https://www.blender.org/" target="_blank">Blender</a></p>
+
 <style>
     h2 {
         font-size: 32px;
@@ -176,6 +178,10 @@
         margin-block-start: 0;
         margin-block-end: 0;
         margin-right: 8px;
+    }
+    #credits {
+        font-size: 12px;
+        font-style: italic;
     }
 </style>
 

@@ -69,7 +69,7 @@
     <div id="nav">
         <div id="nav-bar">
             <div id="nav-pages">
-                <button id="hamburger-button" on:click|stopPropagation={toggleNavMenu} class={showNavMenu ? "menu-open" : ""}>
+                <button type="button" id="hamburger-button" on:click|stopPropagation={toggleNavMenu} class={showNavMenu ? "menu-open" : ""}>
                     <Icon name="menu-5-line" width="20" height="20" tabindex="-1"/>
                 </button>
                 <div id="nav-menu" class:disabled={showNavMenu == false}>
@@ -95,7 +95,7 @@
             </div>
             <div id="nav-socials">
             {#if mobile2}
-                <button id="hamburger-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
+                <button type="button" id="hamburger-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
                     <Icon name="user-heart-line" width="20" height="20" tabindex="-1"/>
                 </button>
                 <div id="social-menu" class:disabled={showSocialMenu == false}>
@@ -370,7 +370,7 @@
 
     .menu-background-blur {
         width: 100%;
-        height: 60vh;
+        height: 60svh;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -383,7 +383,7 @@
 
     .menu-background {
         width: 100%;
-        height: 60vh;
+        height: 60svh;
         position: absolute;
         bottom: 0;
         left: 0;
