@@ -33,6 +33,9 @@
 
 <!-- <AnimatedPage> -->
 
+<svelte:head>
+    <title>Andy Shi | Design</title>
+</svelte:head>
 
 <h1>Design</h1>
 <Break />
