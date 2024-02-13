@@ -13,6 +13,10 @@
 	let tags = pages.find((e) => e.title == title)!.tags;
 </script>
 
+<svelte:head>
+	<title>Andy Shi | {title}</title>
+</svelte:head>
+
 <div class="generic-project-page">
 	<a href="{base}/design" class="back-button">
 		<Icon name="corner-up-left-fill" width="16" height="16" tabindex="-1" />
