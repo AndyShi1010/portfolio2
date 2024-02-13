@@ -69,9 +69,9 @@
     <div id="nav">
         <div id="nav-bar">
             <div id="nav-pages">
-                <a href="javascript:void(0);" id="hamburger-button" on:click|stopPropagation={toggleNavMenu} class={showNavMenu ? "menu-open" : ""}>
+                <button type="button" id="hamburger-button" on:click|stopPropagation={toggleNavMenu} class={showNavMenu ? "menu-open" : ""}>
                     <Icon name="menu-5-line" width="20" height="20" tabindex="-1"/>
-                </a>
+                </button>
                 <div id="nav-menu" class:disabled={showNavMenu == false}>
                 {#if showNavMenu}
                     <a href="{base}/" class="menu-link" 
@@ -95,9 +95,9 @@
             </div>
             <div id="nav-socials">
             {#if mobile2}
-                <a href="javascript:void(0);" id="social-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
+                <button type="button" id="hamburger-button" on:click|stopPropagation={toggleSocialMenu} class={showSocialMenu ? "menu-open" : ""}>
                     <Icon name="user-heart-line" width="20" height="20" tabindex="-1"/>
-                </a>
+                </button>
                 <div id="social-menu" class:disabled={showSocialMenu == false}>
                 {#if showSocialMenu}
                     <a href="https://github.com/AndyShi1010" target="_blank" 
@@ -220,7 +220,7 @@
         margin-left: var(--page-padding);
     }
 
-    #home-button, #hamburger-button, #social-button, .nav-button {
+    #home-button, #hamburger-button, .nav-button {
         background-color: transparent;
         color: white;
         border: none;
@@ -237,7 +237,7 @@
         font-size: 20px;
     }
 
-    #home-button, #hamburger-button, #social-button {
+    #home-button, #hamburger-button {
         width: 40px;
         height: 40px;
         display: inline-flex;
@@ -247,7 +247,7 @@
         height: 40px;
         width: 120px;
     }
-    .nav-button:hover, .nav-button.selected:hover, .nav-button:focus, #home-button:hover, #home-button:focus, #hamburger-button:hover, #hamburger-button.menu-open, #social-button:hover, #social-button.menu-open {
+    .nav-button:hover, .nav-button.selected:hover, .nav-button:focus, #home-button:hover, #home-button:focus, #hamburger-button:hover, #hamburger-button.menu-open {
         /* border: 2px solid white; */
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,1), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 20px 8px rgba(255,255,255,0.3);
         background-position: 0% 50%;
@@ -256,7 +256,7 @@
         box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,0.75), inset 0px 0px 15px rgba(255,255,255,0.3), 0px 0px 20px 0px rgba(255,255,255,0.3);
         background-position: 0% 0%;
     }
-    .nav-button::before, #home-button:before, #hamburger-button:before, #social-button:before {
+    .nav-button::before, #home-button:before, #hamburger-button:before {
         content: '';
         border: 1px solid rgba(255,255,255,0);
         width: 100%;
@@ -279,7 +279,7 @@
         /* transform: scale(1.2); */
     }
 
-    .nav-button::after, #home-button::after, #hamburger-button::after, #social-button::after {
+    .nav-button::after, #home-button::after, #hamburger-button::after {
         content: '';
         border: 1px solid rgba(255,255,255,0);
         width: 100%;
@@ -291,7 +291,7 @@
         transition-timing-function: cubic-bezier(0.76, 0, 0.24, 1); */
         box-sizing: border-box;
     }
-    .nav-button:hover::after, .nav-button:focus:after, #home-button:hover::after, #home-button:focus:after, #hamburger-button:hover::after, #hamburger-button:focus:after, #social-button:hover::after, #social-button:focus::after {
+    .nav-button:hover::after, .nav-button:focus:after, #home-button:hover::after, #home-button:focus:after, #hamburger-button:hover::after, #hamburger-button:focus:after {
         border: 1px solid rgba(255,255,255,0.75);
         /* width: calc(100% + 24px);
         height: calc(100% + 24px);
