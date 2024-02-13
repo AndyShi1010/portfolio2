@@ -47,10 +47,6 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Andy Shi</title>
-</svelte:head>
-
 <!-- <div class="wrapper"> -->
 	<!-- <div> -->
     <!-- <h3>Work in progress</h3> -->

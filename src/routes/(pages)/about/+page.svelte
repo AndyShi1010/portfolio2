@@ -8,9 +8,6 @@
     import { Icon } from 'svelte-remix';
 </script>
 
-<svelte:head>
-	<title>Andy Shi | About</title>
-</svelte:head>
 
 <h1>About</h1>
 <Break />

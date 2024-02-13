@@ -6,9 +6,6 @@
 </script>
 
 <!-- <AnimatedPage> -->
-    <svelte:head>
-	<title>Andy Shi | Code</title>
-    </svelte:head>
     <h1>Code</h1>
     <Break />
     <p>A showcase of my various coding projects utilizing different technologies and stacks. Projects include web apps, mobile apps, and games.</p>
